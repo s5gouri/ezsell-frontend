@@ -1,0 +1,16 @@
+@media (max-width: 780px) {
+  .right {
+    display: none;
+  }
+}
+.right {
+  border-left: 5px solid white;
+  
+}
+.forflow {
+  height: 100%;
+  overflow: scroll;
+}
+.forflow::-webkit-scrollbar {
+  display: none;
+}

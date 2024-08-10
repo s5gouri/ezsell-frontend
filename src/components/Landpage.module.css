@@ -1,0 +1,17 @@
+.bold {
+  font-weight: bolder;
+  font-size: 100px;
+}
+.bold1 {
+  font-weight: bolder;
+  font-size: 80px;
+}
+.txt_img {
+  height: 360px;
+}
+.foot {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}

@@ -1,0 +1,40 @@
+.hovimg {
+  z-index: 2;
+}
+.hovimg:hover {
+  transition-duration: 0.5s;
+  opacity: 0.5;
+  /* visibility: hidden; */
+}
+.onhovtext {
+  position: absolute;
+  color: black;
+  z-index: 1;
+  background-color: rgb(220, 220, 229);
+}
+pre::-webkit-scrollbar {
+  display: none;
+}
+.forflow {
+  height: 100%;
+  overflow: scroll;
+}
+.forflow::-webkit-scrollbar {
+  display: none;
+}
+.buyerlist {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgb(156, 204, 237);
+  box-shadow: 0 8px 32px 0 rgba(82, 241, 233, 0.37);
+  border-radius: 10px;
+}
+
+@media (max-width: 780px) {
+  .hovimg {
+    opacity: 0.7;
+  }
+  .hide {
+    display: none;
+  }
+}

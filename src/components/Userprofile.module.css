@@ -1,0 +1,40 @@
+.a1:hover {
+  background-color: #3e454b;
+  color: black;
+}
+.left::-webkit-scrollbar {
+  display: none;
+}
+.left1 {
+  overflow-y: scroll;
+  height: 100vh;
+}
+.white {
+  color: white;
+  background-color: #212529;
+}
+.black {
+  color: black;
+  background-color: aliceblue;
+}
+.gd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images {
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+@media (min-width: 780px) {
+  .formobile1 {
+    display: none;
+  }
+}
+@media (max-width: 780px) {
+  .formobile2 {
+    display: none;
+  }
+}

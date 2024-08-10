@@ -1,0 +1,18 @@
+.a1 {
+  border-top-left-radius: none;
+}
+.hovimg {
+  z-index: 2;
+}
+.hovimg:hover {
+    transition-duration: 0.5s;
+  opacity: 0.1;
+  /* visibility: hidden; */
+}
+.onhovtext {
+  position: absolute;
+  color: black;
+  z-index: 1;
+  background-color: rgb(220, 220, 229);
+  
+}

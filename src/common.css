@@ -1,0 +1,183 @@
+.body0 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.body1 {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://ezsell-backend.vercel.app/backgrounds/bg1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: left;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.body2 {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://ezsell-backend.vercel.app/backgrounds/bg2.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: left;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.body3 {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://ezsell-backend.vercel.app/backgrounds/bg3.webp");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: left;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.body4 {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://ezsell-backend.vercel.app/backgrounds/bg4.webp");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: left;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.body5 {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://ezsell-backend.vercel.app/backgrounds/bg5.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: left;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.body6 {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://ezsell-backend.vercel.app/backgrounds/bg6.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: left;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.body7 {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://ezsell-backend.vercel.app/backgrounds/bg7.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: left;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.body8 {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://ezsell-backend.vercel.app/backgrounds/bg8.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: left;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.aaa1 {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(0, 0, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 10px;
+  z-index: 2;
+}
+.aaa2 {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgb(156, 204, 237);
+  box-shadow: 0 8px 32px 0 rgba(82, 241, 233, 0.37);
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.zero {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.light {
+  color: white;
+  background-color: #212529;
+}
+.dark {
+  color: black;
+  background-color: aliceblue;
+}
+.black {
+  color: #000;
+}
+.white {
+  color: #fff;
+}
+
+.full {
+  height: 100vh;
+  width: 100%;
+}
+
+.align {
+  display: flex;
+
+  align-items: center;
+}
+.centre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cont {
+  overflow-y: auto;
+  overflow-x: none;
+}
+.cont::-webkit-scrollbar {
+  display: none;
+}
+
+.ptop {
+  padding-top: 60px;
+}
+.mtop {
+  margin-top: 60px;
+}

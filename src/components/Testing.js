@@ -32,7 +32,7 @@ export const Testing = () => {
     const get_history = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:8000/user/history",
+          "https://ezsell-backend.vercel.app/user/history",
           {},
           {
             withCredentials: true,
@@ -49,7 +49,7 @@ export const Testing = () => {
     const user_details = async () => {
       try {
         const response1 = await axios.post(
-          "http://localhost:8000/user/profile",
+          "https://ezsell-backend.vercel.app/user/profile",
           {},
           {
             withCredentials: true,
@@ -63,7 +63,7 @@ export const Testing = () => {
           setconfirmation(1);
           setname(response1.data.user.name);
           setuserprofile(
-            `http://localhost:8000${response1.data.user.profileimg}`
+            `https://ezsell-backend.vercel.app${response1.data.user.profileimg}`
           );
           setphone(response1.data.user.phone);
           setemail(response1.data.user.email);
@@ -106,7 +106,7 @@ export const Testing = () => {
     const mailSend = async () => {
       try {
         const responseForSignup = await axios.post(
-          "http://localhost:8000/user/updating",
+          "https://ezsell-backend.vercel.app/user/updating",
           formData1,
           {
             headers: {
@@ -134,7 +134,7 @@ export const Testing = () => {
     const mailSend = async () => {
       try {
         const responseForSignup = await axios.post(
-          "http://localhost:8000/user/update/password",
+          "https://ezsell-backend.vercel.app/user/update/password",
           { PASSWORD },
           {
             withCredentials: true,
@@ -159,7 +159,7 @@ export const Testing = () => {
     if (FEEDBACK_HERE !== "") {
       try {
         const feedback_response = await axios.post(
-          "http://localhost:8000/user/feedback",
+          "https://ezsell-backend.vercel.app/user/feedback",
           { FEEDBACK_HERE },
           { withCredentials: true }
         );
@@ -405,7 +405,7 @@ export const Testing = () => {
                           <div className={`row `}>
                             <div className="col-md-6 mb-3 centre ">
                               <img
-                                src="http://localhost:8000/backgrounds/bg8.jpg"
+                                src="https://ezsell-backend.vercel.app/backgrounds/bg8.jpg"
                                 alt="Unable to load at the moment"
                                 onClick={() => changebg(8)}
                                 width="250px"
@@ -426,7 +426,7 @@ export const Testing = () => {
                           <div className={`row `}>
                             <div className="col-md-6 mb-3 centre ">
                               <img
-                                src="http://localhost:8000/backgrounds/bg7.jpeg"
+                                src="https://ezsell-backend.vercel.app/backgrounds/bg7.jpeg"
                                 alt="Unable to load at the moment"
                                 onClick={() => changebg(7)}
                                 width="250px"
@@ -449,7 +449,7 @@ export const Testing = () => {
                           <div className={`row `}>
                             <div className="col-md-6 mb-3 centre ">
                               <img
-                                src="http://localhost:8000/backgrounds/bg6.jpg"
+                                src="https://ezsell-backend.vercel.app/backgrounds/bg6.jpg"
                                 alt="Unable to load at the moment"
                                 onClick={() => changebg(6)}
                                 width="250px"
@@ -470,7 +470,7 @@ export const Testing = () => {
                           <div className={`row `}>
                             <div className="col-md-6 mb-3 centre ">
                               <img
-                                src="http://localhost:8000/backgrounds/bg5.jpeg"
+                                src="https://ezsell-backend.vercel.app/backgrounds/bg5.jpeg"
                                 alt="Unable to load at the moment"
                                 onClick={() => changebg(5)}
                                 width="250px"
@@ -494,7 +494,7 @@ export const Testing = () => {
                           <div className={`row `}>
                             <div className="col-md-6 mb-3 centre ">
                               <img
-                                src="http://localhost:8000/backgrounds/bg1.jpg"
+                                src="https://ezsell-backend.vercel.app/backgrounds/bg1.jpg"
                                 alt="Unable to load at the moment"
                                 onClick={() => changebg(1)}
                                 width="250px"
@@ -515,7 +515,7 @@ export const Testing = () => {
                           <div className={`row `}>
                             <div className="col-md-6 mb-3 centre ">
                               <img
-                                src="http://localhost:8000/backgrounds/bg2.jpg"
+                                src="https://ezsell-backend.vercel.app/backgrounds/bg2.jpg"
                                 alt="Unable to load at the moment"
                                 onClick={() => changebg(2)}
                                 width="250px"
@@ -539,7 +539,7 @@ export const Testing = () => {
                           <div className={`row `}>
                             <div className="col-md-6 mb-3 centre ">
                               <img
-                                src="http://localhost:8000/backgrounds/bg3.webp"
+                                src="https://ezsell-backend.vercel.app/backgrounds/bg3.webp"
                                 alt="Unable to load at the moment"
                                 width="250px"
                                 onClick={() => changebg(3)}
@@ -560,7 +560,7 @@ export const Testing = () => {
                           <div className={`row `}>
                             <div className="col-md-6 mb-3 centre ">
                               <img
-                                src="http://localhost:8000/backgrounds/bg4.webp"
+                                src="https://ezsell-backend.vercel.app/backgrounds/bg4.webp"
                                 alt="Unable to load at the moment"
                                 onClick={() => changebg(4)}
                                 width="250px"

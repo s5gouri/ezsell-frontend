@@ -13,7 +13,7 @@ export const ThemeProvider = ({ children }) => {
     console.log("Sending data to API:", bgno);
     try {
       const responseForSignup = await axios.post(
-        "http://localhost:8000/user/bg",
+        "https://ezsell-backend.vercel.app/user/bg",
         { bgno },
         {
           withCredentials: true,
@@ -42,7 +42,7 @@ export const ThemeProvider = ({ children }) => {
     const fetchUserDetails = async () => {
       try {
         const rep = await axios.post(
-          "http://localhost:8000/user",
+          "https://ezsell-backend.vercel.app/user",
           {},
           { withCredentials: true }
         );

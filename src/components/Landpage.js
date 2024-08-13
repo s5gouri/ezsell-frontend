@@ -13,7 +13,7 @@ export const Landpage = () => {
     const user_details = async () => {
       try {
         const response1 = await axios.post(
-          "http://localhost:8000/user",
+          "https://ezsell-backend.vercel.app/user",
           {},
           {
             withCredentials: true,

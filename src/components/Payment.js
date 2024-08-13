@@ -15,7 +15,7 @@ export const Payment = () => {
     const fetch_details = async () => {
       try {
         const rep = await axios.post(
-          "https://ezsell-backend.vercel.app/user",
+          "http://localhost:8000/user",
           {},
           { withCredentials: true }
         );
@@ -47,7 +47,7 @@ export const Payment = () => {
     formData.append("QRCODE", QRCODE);
     try {
       const response = await axios.post(
-        "https://ezsell-backend.vercel.app/user/qrcode",
+        "http://localhost:8000/user/qrcode",
         formData,
         {
           headers: {
@@ -115,7 +115,7 @@ export const Payment = () => {
                         <div className="row centre">
                           <div className="col-md-7">
                             <img
-                              src={`https://ezsell-backend.vercel.app${user.qrcode}`}
+                              src={`http://localhost:8000${user.qrcode}`}
                               alt="Unable to load at the moment"
                               width="300"
                               height="300"

@@ -13,7 +13,7 @@ export const Signin = () => {
     event.preventDefault();
     try {
       const response1 = await axios.post(
-        "https://ezsell-backend.vercel.app/log/sign-in",
+        "http://localhost:8000/log/sign-in",
         {
           EMAIL,
           PASSWORD,

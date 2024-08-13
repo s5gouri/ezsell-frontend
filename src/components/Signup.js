@@ -35,7 +35,7 @@ export const Signup = () => {
     const mailSend = async () => {
       try {
         const responseForSignup = await axios.post(
-          "https://ezsell-backend.vercel.app/log/sign-up",
+          "http://localhost:8000/log/sign-up",
           formData,
           {
             headers: {

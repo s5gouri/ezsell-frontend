@@ -11,7 +11,7 @@ export const Historyitem = (props) => {
         <div className="row g-0">
           <div className="col-md-4">
             <a
-              href={`https://ezsell-backend.vercel.app/${props.data.image}`}
+              href={`http://localhost:8000/${props.data.image}`}
               target="_mail"
             >
               <div className="col-12 centre  ">
@@ -20,7 +20,7 @@ export const Historyitem = (props) => {
                 </div>
 
                 <img
-                  src={`https://ezsell-backend.vercel.app/${props.data.image}`}
+                  src={`http://localhost:8000/${props.data.image}`}
                   className={`img-fluid rounded-end ${mycss.hovimg}`}
                   alt="..."
                   style={{ maxwidth: "540px", maxHeight: "540px" }}

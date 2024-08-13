@@ -18,7 +18,7 @@ export const Navbar = (props) => {
     const user_details = async () => {
       try {
         const response1 = await axios.post(
-          "https://ezsell-backend.vercel.app/user",
+          "http://localhost:8000/user",
           {},
           {
             withCredentials: true,
@@ -29,9 +29,7 @@ export const Navbar = (props) => {
           console.log(response1.data.profileimg);
           // setauth(1);
           setrole(response1.data.role);
-          setuserprofile(
-            `https://ezsell-backend.vercel.app${response1.data.profileimg}`
-          );
+          setuserprofile(`http://localhost:8000${response1.data.profileimg}`);
           setname(response1.data.name);
         } else {
           setbg(`${mycss.navbar1}`);
@@ -65,7 +63,7 @@ export const Navbar = (props) => {
   const userlogout = async () => {
     try {
       const response2 = await axios.post(
-        "https://ezsell-backend.vercel.app/user/logout",
+        "http://localhost:8000/user/logout",
         {},
         {
           withCredentials: true,

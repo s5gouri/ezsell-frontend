@@ -19,7 +19,7 @@ export const Sellpost = (props) => {
     const user_details = async () => {
       try {
         const response1 = await axios.post(
-          "https://ezsell-backend.vercel.app/user",
+          "http://localhost:8000/user",
           {},
           {
             withCredentials: true,
@@ -50,7 +50,7 @@ export const Sellpost = (props) => {
     formData.append("KABAD", KABAD);
     try {
       const response1 = await axios.post(
-        "https://ezsell-backend.vercel.app/user/sell-post",
+        "http://localhost:8000/user/sell-post",
         formData,
         {
           headers: {

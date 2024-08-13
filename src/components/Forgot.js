@@ -10,7 +10,7 @@ export const Forgot = () => {
   const handle_submit = async (e) => {
     e.preventDefault();
     const response1 = await axios.post(
-      "https://ezsell-backend.vercel.app/user/forgot",
+      "http://localhost:8000/user/forgot",
       {
         EMAIL,
         PASSWORD,

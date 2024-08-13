@@ -11,7 +11,7 @@ export const Footer = () => {
     e.preventDefault();
 
     await axios.post(
-      "https://ezsell-backend.vercel.app/user/message",
+      "http://localhost:8000/user/message",
       { msg: MESSAGE, email: EMAIL },
       {
         withCredentials: true,

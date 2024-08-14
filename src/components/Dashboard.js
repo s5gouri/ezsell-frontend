@@ -5,7 +5,7 @@ import buyer_img from "../images/buyer-image.jpg";
 import axios from "axios";
 import { Item } from "./Item";
 import "../common.css";
-import mycss from "./Dashboard.module.css";
+import mycss1 from "./Dashboard.module.css";
 import { styled } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Footer } from "./Footer";
@@ -112,7 +112,7 @@ export const Dashboard = () => {
                   {ROLE === "N_USER" && (
                     <>
                       <div
-                        className={`col-md-8 border-right mt-1 rounded ${mycss.forflow} `}
+                        className={`col-md-8 border-right mt-1 rounded ${mycss1.forflow} `}
                         style={{ maxHeight: "600px" }}
                       >
                         {ROLE === "N_USER" && (
@@ -144,7 +144,7 @@ export const Dashboard = () => {
                         ))}
                       </div>
 
-                      <div className={`col-md-4 ${mycss.right}`}>
+                      <div className={`col-md-4 ${mycss1.right}`}>
                         <div className="row centre">
                           <div className="fs-3 centre">Our top Buyers</div>
                           <div className="ima centre mt-4">
@@ -166,7 +166,7 @@ export const Dashboard = () => {
                   {ROLE === "BUYER" && (
                     <>
                       <div
-                        className={`col-12 border-right mt-1 rounded ${mycss.forflow} `}
+                        className={`col-12 border-right mt-1 rounded ${mycss1.forflow} `}
                         style={{ maxHeight: "600px" }}
                       >
                         <br />

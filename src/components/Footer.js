@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import mycss from "./Footer.module.css";
+import mycss2 from "./Footer.module.css";
 import { useTheme } from "../ThemeContext";
 export const Footer = () => {
   const { mode, toggleMode } = useTheme();
@@ -21,7 +21,7 @@ export const Footer = () => {
   };
   return (
     <>
-      <div className={`row ${mycss.footer} ${mode} pt-4 pb-3`}>
+      <div className={`row ${mycss2.footer} ${mode} pt-4 pb-3`}>
         <div className="col-6 centre zero">
           <div className="row">
             <div className="col-12">

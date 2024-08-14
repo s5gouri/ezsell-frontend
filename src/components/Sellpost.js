@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import mycss5 from "./Sellpost.module.css";
+import mycss9 from "./Sellpost.module.css";
 import { Navbar } from "./Navbar";
 import { useTheme } from "../ThemeContext";
 import { useNavigate } from "react-router-dom";
@@ -73,11 +73,11 @@ export const Sellpost = (props) => {
       <Navbar confirm={confirmation} />
       <body className={`${bg} ${mode}`}>
         <div className="cont">
-          <div className={`${mycss5.centre} container  pt-5`}>
+          <div className={`${mycss9.centre} container  pt-5`}>
             <div className="fs-1 ">Sell Something</div>
           </div>
           <div className="container">
-            <div className={`${mycss5.centre} row`}>
+            <div className={`${mycss9.centre} row`}>
               <div className={`col-md-6 ${aaa} mt-4 text-start`}>
                 <form onSubmit={handleSubmit1} enctype="multipart/form-data">
                   <div className="mb-3 mt-3">

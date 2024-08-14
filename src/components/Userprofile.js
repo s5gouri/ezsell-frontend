@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useTheme } from "../ThemeContext";
 import axios from "axios";
 import { Historyitem } from "./Historyitem";
-import mycss4 from "./Userprofile.module.css";
+import mycss12 from "./Userprofile.module.css";
 import "../common.css";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
@@ -182,7 +182,7 @@ export const Userprofile = () => {
         <div className="cont">
           <div className="container-fluid ">
             <div className="row ptop">
-              <div className={`row ${mycss4.formobile1}`}>
+              <div className={`row ${mycss12.formobile1}`}>
                 <button
                   className={` btn btn-primary ms-2 mt-3 centre mb-2 col-2 `}
                   type="button"
@@ -215,7 +215,7 @@ export const Userprofile = () => {
                   ></button>
                 </div>
                 <div className="offcanvas-body">
-                  <div className={`${mycss4.left} ${mycss4.left1} `}>
+                  <div className={`${mycss12.left} ${mycss12.left1} `}>
                     <ul className={`nav nav-pills flex-column`}>
                       <li>
                         <a
@@ -225,7 +225,7 @@ export const Userprofile = () => {
                           data-bs-dismiss="offcanvas"
                         >
                           <button
-                            className={` ${mode} btn ${mycss4.a1}`}
+                            className={` ${mode} btn ${mycss12.a1}`}
                             data-bs-dismiss="offcanvas"
                             aria-label="Close"
                           >
@@ -241,7 +241,7 @@ export const Userprofile = () => {
                           data-bs-dismiss="offcanvas"
                         >
                           <button
-                            className={` ${mode} btn ${mycss4.a1}`}
+                            className={` ${mode} btn ${mycss12.a1}`}
                             data-bs-dismiss="offcanvas"
                             aria-label="Close"
                           >
@@ -257,7 +257,7 @@ export const Userprofile = () => {
                           data-bs-dismiss="offcanvas"
                         >
                           <button
-                            className={` ${mode} btn ${mycss4.a1}`}
+                            className={` ${mode} btn ${mycss12.a1}`}
                             data-bs-dismiss="offcanvas"
                             aria-label="Close"
                           >
@@ -273,7 +273,7 @@ export const Userprofile = () => {
                           data-bs-dismiss="offcanvas"
                         >
                           <button
-                            className={` ${mode} btn ${mycss4.a1}`}
+                            className={` ${mode} btn ${mycss12.a1}`}
                             data-bs-dismiss="offcanvas"
                             aria-label="Close"
                           >
@@ -291,7 +291,7 @@ export const Userprofile = () => {
                               data-bs-dismiss="offcanvas"
                             >
                               <button
-                                className={` ${mode} btn ${mycss4.a1}`}
+                                className={` ${mode} btn ${mycss12.a1}`}
                                 data-bs-dismiss="offcanvas"
                                 aria-label="Close"
                               >
@@ -305,17 +305,17 @@ export const Userprofile = () => {
                   </div>
                 </div>
               </div>
-              <div className={`col-auto ${mycss4.formobile2}`}>
+              <div className={`col-auto ${mycss12.formobile2}`}>
                 <nav
                   id="navbar-example3"
                   className={`h-100 flex-column align-items-stretch pe-4 ps-4 border-end`}
                 >
                   <nav className="nav nav-pills flex-column">
-                    <div className={`${mycss4.left} ${mycss4.left1} `}>
+                    <div className={`${mycss12.left} ${mycss12.left1} `}>
                       <ul className={`nav  flex-column`}>
                         <li>
                           <a
-                            className={`nav-link ${mode} ms-1 mt-2 centre  ${mycss4.a1}`}
+                            className={`nav-link ${mode} ms-1 mt-2 centre  ${mycss12.a1}`}
                             href="#PROFILE"
                           >
                             Profile
@@ -323,7 +323,7 @@ export const Userprofile = () => {
                         </li>
                         <li>
                           <a
-                            className={`nav-link ${mode} ms-1 mt-2 centre ${mycss4.a1}`}
+                            className={`nav-link ${mode} ms-1 mt-2 centre ${mycss12.a1}`}
                             href="#CHANGE"
                           >
                             Edit
@@ -331,7 +331,7 @@ export const Userprofile = () => {
                         </li>
                         <li>
                           <a
-                            className={`nav-link ${mode} ms-1 mt-2 centre ${mycss4.a1}`}
+                            className={`nav-link ${mode} ms-1 mt-2 centre ${mycss12.a1}`}
                             href="#SETTINGS"
                           >
                             Settings
@@ -339,7 +339,7 @@ export const Userprofile = () => {
                         </li>
                         <li>
                           <a
-                            className={`nav-link ${mode} ms-1 mt-2 centre ${mycss4.a1}`}
+                            className={`nav-link ${mode} ms-1 mt-2 centre ${mycss12.a1}`}
                             href="#FEEDBACK"
                           >
                             Feedback
@@ -349,7 +349,7 @@ export const Userprofile = () => {
                           <>
                             <li>
                               <a
-                                className={`nav-link ${mode} ms-1 mt-2 centre ${mycss4.a1}`}
+                                className={`nav-link ${mode} ms-1 mt-2 centre ${mycss12.a1}`}
                                 href="#HISTORY"
                               >
                                 History
@@ -371,11 +371,11 @@ export const Userprofile = () => {
                     className="scrollspy-example-2"
                     tabindex="0"
                   >
-                    <div className={`${mycss4.left} ${mycss4.left1} `}>
+                    <div className={`${mycss12.left} ${mycss12.left1} `}>
                       <div id="PROFILE">
                         <div className="row me-1">
                           <div
-                            className={`col-md-4 mb-2 centre ${mycss4.formobile1}`}
+                            className={`col-md-4 mb-2 centre ${mycss12.formobile1}`}
                           >
                             <img
                               src={UPROFILE}
@@ -399,7 +399,7 @@ export const Userprofile = () => {
                             )}
                           </div>
                           <div
-                            className={`col-md-4 centre ${mycss4.formobile2}`}
+                            className={`col-md-4 centre ${mycss12.formobile2}`}
                           >
                             <img
                               src={UPROFILE}
@@ -440,7 +440,7 @@ export const Userprofile = () => {
                                       </label>
                                       <input
                                         type="text"
-                                        className={`form-control ${mycss4.a1} `}
+                                        className={`form-control ${mycss12.a1} `}
                                         id="exampleInputEmail3"
                                         aria-describedby="emailHelp"
                                         value={NEWNAME}
@@ -461,7 +461,7 @@ export const Userprofile = () => {
                                       </label>
                                       <input
                                         type="file"
-                                        className={`form-control ${mycss4.a1} `}
+                                        className={`form-control ${mycss12.a1} `}
                                         id="exampleFormControlInput5"
                                         onChange={(e) =>
                                           setnewuserprofile(e.target.files[0])
@@ -479,7 +479,7 @@ export const Userprofile = () => {
                                       </label>
                                       <input
                                         type="text"
-                                        className={`form-control  ${mycss4.a1}`}
+                                        className={`form-control  ${mycss12.a1}`}
                                         id="exampleInputEmailn"
                                         aria-describedby="emailHelp"
                                         value={NEWADDRESS}
@@ -521,7 +521,7 @@ export const Userprofile = () => {
                                       />
                                     </div>
                                   </div>
-                                  <div className={`col-md-2  ${mycss4.gd}`}>
+                                  <div className={`col-md-2  ${mycss12.gd}`}>
                                     <button
                                       type="submit"
                                       className={`btn btn-primary mt-3`}
@@ -545,7 +545,7 @@ export const Userprofile = () => {
                                     </label>
                                     <input
                                       type="password"
-                                      className={`form-control ${mycss4.a1} `}
+                                      className={`form-control ${mycss12.a1} `}
                                       id="exampleInputPassword6"
                                       name="PASSWORD"
                                       value={PASSWORD}
@@ -556,7 +556,7 @@ export const Userprofile = () => {
                                     />
                                   </div>
                                 </div>
-                                <div className={`col-md-1  ${mycss4.gd}`}>
+                                <div className={`col-md-1  ${mycss12.gd}`}>
                                   <button
                                     type="submit"
                                     className={`btn btn-primary mt-3`}
@@ -584,7 +584,7 @@ export const Userprofile = () => {
                               <div className="col-md-5">
                                 <div className={`row `}>
                                   <div
-                                    className={`col-md-6 mb-4 ${mycss4.images} dark centre`}
+                                    className={`col-md-6 mb-4 ${mycss12.images} dark centre`}
                                   >
                                     Plain Background
                                   </div>
@@ -608,7 +608,7 @@ export const Userprofile = () => {
                                       alt="Unable to load at the moment"
                                       onClick={() => changebg(8)}
                                       width="250px"
-                                      className={`${mycss4.images}`}
+                                      className={`${mycss12.images}`}
                                     />
                                   </div>
                                   <div className="col centre ">
@@ -629,7 +629,7 @@ export const Userprofile = () => {
                                       alt="Unable to load at the moment"
                                       onClick={() => changebg(7)}
                                       width="250px"
-                                      className={`${mycss4.images}`}
+                                      className={`${mycss12.images}`}
                                     />
                                   </div>
                                   <div className="col centre ">
@@ -652,7 +652,7 @@ export const Userprofile = () => {
                                       alt="Unable to load at the moment"
                                       onClick={() => changebg(6)}
                                       width="250px"
-                                      className={`${mycss4.images}`}
+                                      className={`${mycss12.images}`}
                                     />
                                   </div>
                                   <div className="col centre ">
@@ -673,7 +673,7 @@ export const Userprofile = () => {
                                       alt="Unable to load at the moment"
                                       onClick={() => changebg(5)}
                                       width="250px"
-                                      className={`${mycss4.images}`}
+                                      className={`${mycss12.images}`}
                                     />
                                   </div>
                                   <div className="col centre ">
@@ -697,7 +697,7 @@ export const Userprofile = () => {
                                       alt="Unable to load at the moment"
                                       onClick={() => changebg(1)}
                                       width="250px"
-                                      className={`${mycss4.images}`}
+                                      className={`${mycss12.images}`}
                                     />
                                   </div>
                                   <div className="col centre ">
@@ -718,7 +718,7 @@ export const Userprofile = () => {
                                       alt="Unable to load at the moment"
                                       onClick={() => changebg(2)}
                                       width="250px"
-                                      className={`${mycss4.images}`}
+                                      className={`${mycss12.images}`}
                                     />
                                   </div>
                                   <div className="col centre ">
@@ -742,7 +742,7 @@ export const Userprofile = () => {
                                       alt="Unable to load at the moment"
                                       width="250px"
                                       onClick={() => changebg(3)}
-                                      className={`${mycss4.images}`}
+                                      className={`${mycss12.images}`}
                                     />
                                   </div>
                                   <div className="col centre ">
@@ -763,7 +763,7 @@ export const Userprofile = () => {
                                       alt="Unable to load at the moment"
                                       onClick={() => changebg(4)}
                                       width="250px"
-                                      className={`${mycss4.images}`}
+                                      className={`${mycss12.images}`}
                                     />
                                   </div>
                                   <div className="col centre ">

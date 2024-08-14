@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import mycss2 from "./Signin.module.css";
+import mycss10 from "./Signin.module.css";
 import { Navbar } from "./Navbar";
 import imag from "../images/signin.png";
 export const Signin = () => {
@@ -40,21 +40,21 @@ export const Signin = () => {
   return (
     <>
       <Navbar confirm={4} />
-      <div className={`${mycss2.body1}`}>
+      <div className={`${mycss10.body1}`}>
         <div className="container">
-          <div className={`row ${mycss2.centre1}`}>
-            <div className={`col-md-2 ${mycss2.centre1}`}>
-              <div className={`fs-1 mb-3 ${mycss2.txt}`}>Sign-in to ezSell</div>
+          <div className={`row ${mycss10.centre1}`}>
+            <div className={`col-md-2 ${mycss10.centre1}`}>
+              <div className={`fs-1 mb-3 ${mycss10.txt}`}>Sign-in to ezSell</div>
             </div>
             <div className={` col-md-9 `}>
               <div className={`row  bg-primar `}>
-                <div className={`col-md-5 ${mycss2.hideimg} `}>
+                <div className={`col-md-5 ${mycss10.hideimg} `}>
                   <Link to="/">
                     <img src={imag} alt="gg" height="500px" />
                   </Link>
                 </div>
                 <div
-                  className={`col-md-5 bg-primar ${mycss2.brdr} ${mycss2.b} centre ${mycss2.centre1} ms-1 `}
+                  className={`col-md-5 bg-primar ${mycss10.brdr} ${mycss10.b} centre ${mycss10.centre1} ms-1 `}
                 >
                   <div className={`col-md-10  mt-2 mb-2 `}>
                     <form onSubmit={handlesubmit} enctype="multipart/form-data">

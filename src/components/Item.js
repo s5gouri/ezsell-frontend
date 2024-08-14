@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useTheme } from "../ThemeContext";
-import mycss from "./Item.module.css";
+import mycss5 from "./Item.module.css";
 export const Item = (props) => {
   const navigate = useNavigate();
   const { mode, toggleMode, aaa, changebg, bg } = useTheme();
@@ -32,13 +32,13 @@ export const Item = (props) => {
               target="_mail"
             >
               <div className="col-12 centre">
-                <div className={`${mycss.onhovtext} centre fs-3`}>
+                <div className={`${mycss5.onhovtext} centre fs-3`}>
                   click to view
                 </div>
 
                 <img
                   src={`https://ezsell-backend.vercel.app/${props.data.image}`}
-                  className={`img-fluid rounded-end ${mycss.hovimg}`}
+                  className={`img-fluid rounded-end ${mycss5.hovimg}`}
                   alt="..."
                   style={{ maxwidth: "540px", maxHeight: "540px" }}
                 />

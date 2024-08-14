@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import mycss from "./Navbar.module.css";
+import mycss7 from "./Navbar.module.css";
 import "../common.css";
 import { useTheme } from "../ThemeContext";
 export const Navbar = (props) => {
@@ -9,7 +9,7 @@ export const Navbar = (props) => {
   const [FULLNAME, setname] = useState("");
   const [UPROFILE, setuserprofile] = useState("/");
   const [ROLE, setrole] = useState("N_USER");
-  const [BG, setbg] = useState(`${mycss.navbar}`);
+  const [BG, setbg] = useState(`${mycss7.navbar}`);
   const [confirm, setconfirm] = useState(1);
   const navigate = useNavigate();
   useEffect(() => {
@@ -27,14 +27,13 @@ export const Navbar = (props) => {
         if (response1.data !== 0) {
           console.log(response1.data);
           console.log(response1.data.profileimg);
-          // setauth(1);
           setrole(response1.data.role);
           setuserprofile(
             `https://ezsell-backend.vercel.app${response1.data.profileimg}`
           );
           setname(response1.data.name);
         } else {
-          setbg(`${mycss.navbar1}`);
+          setbg(`${mycss7.navbar1}`);
           if (props.confirm === 0) {
             navigate("/");
           } else if (props.confirm === 6) {

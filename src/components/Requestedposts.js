@@ -5,7 +5,7 @@ import { useTheme } from "../ThemeContext";
 import axios from "axios";
 import { Item } from "./Item";
 import "../common.css";
-import mycss6 from "./Dashboard.module.css";
+import mycss8 from "./Dashboard.module.css";
 import { Footer } from "./Footer";
 export const Requestedposts = () => {
   const { mode, toggleMode, aaa, changebg, bg } = useTheme();
@@ -76,7 +76,7 @@ export const Requestedposts = () => {
               >
                 <div className="row">
                   <div
-                    className={`col-md-12 border-right mt-1 rounded ${mycss6.forflow} `}
+                    className={`col-md-12 border-right mt-1 rounded ${mycss8.forflow} `}
                     style={{ maxHeight: "750px" }}
                   >
                     {list.length === 0 && (

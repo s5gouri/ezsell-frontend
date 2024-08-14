@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "../common.css";
-import mycss from "./Landpage.module.css";
+import mycss6 from "./Landpage.module.css";
 import land1 from "../images/landingnew1.jpg";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
@@ -45,7 +45,7 @@ export const Landpage = () => {
       <div className="cont">
         <div className="container-fluid pt-5">
           <div className="row pt-2">
-            <div className={`col-md ${mycss.bold}`}>
+            <div className={`col-md ${mycss6.bold}`}>
               <div className=" centre">ezSell</div>
             </div>
             <div className="col-md ">
@@ -64,7 +64,7 @@ export const Landpage = () => {
               </div>
             </div>
           </div>
-          <div className={`${mycss.txt_img} row `}>
+          <div className={`${mycss6.txt_img} row `}>
             <img
               src={land1}
               alt="Unablle to load.."
@@ -120,7 +120,7 @@ export const Landpage = () => {
                 </div>
               </div>
             </div>
-            <div className={`col-md ${mycss.bold1}`}>
+            <div className={`col-md ${mycss6.bold1}`}>
               <div className=" centre">
                 Simple, easy-to-use platform for everyone
               </div>
@@ -271,7 +271,7 @@ export const Landpage = () => {
             </div>
           </div>
         </div>
-        <div className={`${mycss.foot} container-fluid`}>
+        <div className={`${mycss6.foot} container-fluid`}>
           <div className="row centre">
             {" "}
             <p>© 2024 ezSell. All rights reserved.</p>

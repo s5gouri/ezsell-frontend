@@ -8,7 +8,7 @@ import { Sellpost } from "./components/Sellpost.js";
 import { Userprofile } from "./components/Userprofile.js";
 import { Waitingarea } from "./components/Waitingarea.js";
 import { Landpage } from "./components/Landpage.js";
-import { ThemeProvider } from "./ThemeContext"; // Import the ThemeProvider
+import { ThemeProvider } from "./ThemeContext"; 
 import { Fullpost } from "./components/Fullpost.js";
 import { Requestedposts } from "./components/Requestedposts.js";
 import { Payment } from "./components/Payment.js";

@@ -3,7 +3,7 @@ import axios from "axios";
 
 import { useLocation, useNavigate } from "react-router-dom";
 import "../common.css";
-import mycss from "./Fullpost.module.css";
+import mycss3 from "./Fullpost.module.css";
 import { Navbar } from "./Navbar";
 import { useTheme } from "../ThemeContext";
 import { Footer } from "./Footer";
@@ -177,7 +177,7 @@ export const Fullpost = () => {
           <div className="container ptop">
             <div className="row pt-4 mb-4">
               <div
-                className={`col-12 ${aaa} full ${mycss.forflow} `}
+                className={`col-12 ${aaa} full ${mycss3.forflow} `}
                 style={{ maxHeight: "610px" }}
               >
                 <div className="row mt-3">
@@ -187,13 +187,13 @@ export const Fullpost = () => {
                       target="_main"
                     >
                       <div className="col-12 centre">
-                        <div className={`${mycss.onhovtext} centre fs-3`}>
+                        <div className={`${mycss3.onhovtext} centre fs-3`}>
                           click to full view
                         </div>
                         <img
                           src={`https://ezsell-backend.vercel.app${all_data.image}`}
                           alt="Unable to load at the moment"
-                          className={`img-fluid rounded ${mycss.hovimg}`}
+                          className={`img-fluid rounded ${mycss3.hovimg}`}
                           style={{ maxWidth: "550px", maxHeight: "300px" }}
                         />
                       </div>
@@ -293,17 +293,17 @@ export const Fullpost = () => {
                     <>
                       <div className="row mt-2">
                         <div
-                          className={` ${mycss.buyerlist} col-12 centre mt-1 mb-1`}
+                          className={` ${mycss3.buyerlist} col-12 centre mt-1 mb-1`}
                         >
                           {buyers_list.map((person) => (
                             <>
                               <div
-                                className={`mt-1 col-12 ${mycss.buyerlist} ms-1 mb-1 me-1  `}
+                                className={`mt-1 col-12 ${mycss3.buyerlist} ms-1 mb-1 me-1  `}
                               >
                                 <div className="row">
                                   <div className="col-md-6 ">
                                     <div className="row centre">
-                                      <div className={`col-2  ${mycss.centre}`}>
+                                      <div className={`col-2  ${mycss3.centre}`}>
                                         <img
                                           src={`https://ezsell-backend.vercel.app${person.profileimg}`}
                                           alt="loading"
@@ -313,12 +313,12 @@ export const Fullpost = () => {
                                         />
                                       </div>
                                       <div
-                                        className={`col-2 ${mycss.forflow}  `}
+                                        className={`col-2 ${mycss3.forflow}  `}
                                       >
                                         {person.name}
                                       </div>
                                       <div className="col-3">
-                                        <div className={`col ${mycss.hide}`}>
+                                        <div className={`col ${mycss3.hide}`}>
                                           Interested
                                         </div>
                                       </div>
@@ -366,12 +366,12 @@ export const Fullpost = () => {
                       <div className="row mt-2">
                         <div className={`  col-12 centre mt-1 mb-1`}>
                           <div
-                            className={`mt-1 col-12 ${mycss.buyerlist} ms-1 mb-1 me-1  `}
+                            className={`mt-1 col-12 ${mycss3.buyerlist} ms-1 mb-1 me-1  `}
                           >
                             <div className="row">
                               <div className={`col-md-7 `}>
                                 <div className="row centre">
-                                  <div className={`col-2 ${mycss.centre}`}>
+                                  <div className={`col-2 ${mycss3.centre}`}>
                                     <img
                                       src={`https://ezsell-backend.vercel.app${selected.profileimg}`}
                                       alt="loading"
@@ -380,11 +380,11 @@ export const Fullpost = () => {
                                       height="42px"
                                     />
                                   </div>
-                                  <div className={`col-2  ${mycss.forflow}  `}>
+                                  <div className={`col-2  ${mycss3.forflow}  `}>
                                     {selected.name}
                                   </div>
                                   <div className="col-3 ">
-                                    <div className={`col ${mycss.hide}`}>
+                                    <div className={`col ${mycss3.hide}`}>
                                       Buyer Selected
                                     </div>
                                   </div>

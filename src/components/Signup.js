@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import mycss1 from "./Signup.module.css";
+import mycss11 from "./Signup.module.css";
 import { Navbar } from "./Navbar";
 export const Signup = () => {
   const [PHONE, setphone] = useState("");
@@ -66,28 +66,28 @@ export const Signup = () => {
   return (
     <>
       <Navbar confirm={5} />
-      <div className={`${mycss1.body1} `}>
-        <div className={`container mt-4 ${mycss1.a1}`}>
-          <div className={`row ${mycss1.centre1}`}>
-            <div className={`col-md-5 fs-1 ${mycss1.centre1}  `}>
+      <div className={`${mycss11.body1} `}>
+        <div className={`container mt-4 ${mycss11.a1}`}>
+          <div className={`row ${mycss11.centre1}`}>
+            <div className={`col-md-5 fs-1 ${mycss11.centre1}  `}>
               <div
-                className={`col-md-5 fs-1 ${mycss1.centre1} ${mycss1.heading} `}
+                className={`col-md-5 fs-1 ${mycss11.centre1} ${mycss11.heading} `}
               >
                 Sign-up to ezSell
               </div>
             </div>
-            <div className={`col-md-6 ${mycss1.aaa} `}>
+            <div className={`col-md-6 ${mycss11.aaa} `}>
               <form onSubmit={handlesubmit} encType="multipart/form-data">
                 <div className={`mb-1`}>
                   <label
                     htmlFor="exampleInputEmail1"
-                    className={`form-label ${mycss1.txt}`}
+                    className={`form-label ${mycss11.txt}`}
                   >
                     Full name:
                   </label>
                   <input
                     type="text"
-                    className={`form-control  ${mycss1.aaa} `}
+                    className={`form-control  ${mycss11.aaa} `}
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     value={FULLNAME}
@@ -99,13 +99,13 @@ export const Signup = () => {
                 <div className={`mb-1`}>
                   <label
                     htmlFor="exampleInputEmail2"
-                    className={`form-label ${mycss1.txt}`}
+                    className={`form-label ${mycss11.txt}`}
                   >
                     Phone No:
                   </label>
                   <input
                     type="number"
-                    className={`form-control  ${mycss1.aaa}`}
+                    className={`form-control  ${mycss11.aaa}`}
                     id="exampleInputEmail2"
                     aria-describedby="emailHelp"
                     value={PHONE}
@@ -126,13 +126,13 @@ export const Signup = () => {
                 <div className={`mb-1`}>
                   <label
                     htmlFor="exampleInputEmail3"
-                    className={`form-label ${mycss1.txt}`}
+                    className={`form-label ${mycss11.txt}`}
                   >
                     Email address:
                   </label>
                   <input
                     type="email"
-                    className={`form-control  ${mycss1.aaa}`}
+                    className={`form-control  ${mycss11.aaa}`}
                     id="exampleInputEmail3"
                     aria-describedby="emailHelp"
                     value={EMAIL}
@@ -140,20 +140,20 @@ export const Signup = () => {
                     name="EMAIL"
                     required
                   />
-                  <div id="emailHelp" className={`form-text ${mycss1.txt}`}>
+                  <div id="emailHelp" className={`form-text ${mycss11.txt}`}>
                     We'll never share your email with anyone else.
                   </div>
                 </div>
                 <div className={`mb-1`}>
                   <label
                     htmlFor="exampleInputEmail4"
-                    className={`form-label ${mycss1.txt}`}
+                    className={`form-label ${mycss11.txt}`}
                   >
                     Address:
                   </label>
                   <input
                     type="text"
-                    className={`form-control  ${mycss1.aaa}`}
+                    className={`form-control  ${mycss11.aaa}`}
                     id="exampleInputEmail4"
                     aria-describedby="emailHelp"
                     value={ADDRESS}
@@ -166,13 +166,13 @@ export const Signup = () => {
                   <div className={`col me-2`}>
                     <label
                       htmlFor="exampleInputEmail5"
-                      className={`form-label ${mycss1.txt}`}
+                      className={`form-label ${mycss11.txt}`}
                     >
                       Profile:
                     </label>
                     <input
                       type="file"
-                      className={`form-control  ${mycss1.aaa}`}
+                      className={`form-control  ${mycss11.aaa}`}
                       id="exampleFormControlInput5"
                       onChange={(e) => setprofile(e.target.files[0])}
                     />
@@ -180,12 +180,12 @@ export const Signup = () => {
                   <div className={`col`}>
                     <label
                       htmlFor="role-select"
-                      className={`${mycss1.txt} form-label`}
+                      className={`${mycss11.txt} form-label`}
                     >
                       Role:
                     </label>
                     <select
-                      className={`form-control  ${mycss1.aaa}`}
+                      className={`form-control  ${mycss11.aaa}`}
                       id="role-select"
                       name="ROLE"
                       value={ROLE}
@@ -202,13 +202,13 @@ export const Signup = () => {
                   <div className={`col`}>
                     <label
                       htmlFor="exampleInputPassword6"
-                      className={`form-label ${mycss1.txt}`}
+                      className={`form-label ${mycss11.txt}`}
                     >
                       Password:
                     </label>
                     <input
                       type="password"
-                      className={`form-control  ${mycss1.aaa}`}
+                      className={`form-control  ${mycss11.aaa}`}
                       id="exampleInputPassword6"
                       name="PASSWORD"
                       value={PASSWORD}
@@ -216,7 +216,7 @@ export const Signup = () => {
                       required
                     />
                   </div>
-                  <div className={`col ${mycss1.gd}`}>
+                  <div className={`col ${mycss11.gd}`}>
                     <button
                       type="submit"
                       className={`btn btn-outline-primary ms-3`}
@@ -227,8 +227,8 @@ export const Signup = () => {
                 </div>
               </form>
               <div className={`text-center`}>
-                <hr className={`a3 mb-1 white ${mycss1.txt}`} />
-                <h2 className={`text-center fs-5 white ${mycss1.txt}`}>
+                <hr className={`a3 mb-1 white ${mycss11.txt}`} />
+                <h2 className={`text-center fs-5 white ${mycss11.txt}`}>
                   Already have an account?
                 </h2>
                 <Link to="/signin">

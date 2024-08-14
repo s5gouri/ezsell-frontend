@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-import mycss3 from "./Waitingarea.module.css";
+import mycss13 from "./Waitingarea.module.css";
 
 export const Waitingarea = () => {
   const location = useLocation();
@@ -107,35 +107,35 @@ export const Waitingarea = () => {
 
   return (
     <>
-      <div className={`${mycss3.body2}`}>
+      <div className={`${mycss13.body2}`}>
         <div className={`container bg-primar `}>
-          <div className={`row ${mycss3.centre} bg-warnig`}>
-            <div className={`col-md-7 ${mycss3.aaa}`}>
+          <div className={`row ${mycss13.centre} bg-warnig`}>
+            <div className={`col-md-7 ${mycss13.aaa}`}>
               <div className={`row    `}>
-                <div className={`col-md-12 bg-warnin mt-4  ${mycss3.centre} `}>
-                  <div className={`col-md-4 ${mycss3.a} fs-4 bg-warnig  `}>
+                <div className={`col-md-12 bg-warnin mt-4  ${mycss13.centre} `}>
+                  <div className={`col-md-4 ${mycss13.a} fs-4 bg-warnig  `}>
                     Email sent on :
                   </div>
                   <div className={`col-md-5 bg-primar  fs-5 `}>{EMAIL}</div>
                 </div>
 
-                <p className={`fs-5 ${mycss3.centre}`}>
+                <p className={`fs-5 ${mycss13.centre}`}>
                   Check your email for the verification link
                 </p>
 
                 <br />
-                <div className={`row ${mycss3.centre}`}>
-                  <div className={`col-4 mb-4 mb-4 mt-4 ${mycss3.centre} `}>
-                    <div className={mycss3["banter-loader"]}>
-                      <div className={mycss3["banter-loader__box"]}></div>
-                      <div className={mycss3["banter-loader__box"]}></div>
-                      <div className={mycss3["banter-loader__box"]}></div>
-                      <div className={mycss3["banter-loader__box"]}></div>
-                      <div className={mycss3["banter-loader__box"]}></div>
-                      <div className={mycss3["banter-loader__box"]}></div>
-                      <div className={mycss3["banter-loader__box"]}></div>
-                      <div className={mycss3["banter-loader__box"]}></div>
-                      <div className={mycss3["banter-loader__box"]}></div>
+                <div className={`row ${mycss13.centre}`}>
+                  <div className={`col-4 mb-4 mb-4 mt-4 ${mycss13.centre} `}>
+                    <div className={mycss13["banter-loader"]}>
+                      <div className={mycss13["banter-loader__box"]}></div>
+                      <div className={mycss13["banter-loader__box"]}></div>
+                      <div className={mycss13["banter-loader__box"]}></div>
+                      <div className={mycss13["banter-loader__box"]}></div>
+                      <div className={mycss13["banter-loader__box"]}></div>
+                      <div className={mycss13["banter-loader__box"]}></div>
+                      <div className={mycss13["banter-loader__box"]}></div>
+                      <div className={mycss13["banter-loader__box"]}></div>
+                      <div className={mycss13["banter-loader__box"]}></div>
                     </div>
                   </div>
                 </div>
@@ -144,16 +144,16 @@ export const Waitingarea = () => {
                 <br />
                 <br />
                 <br />
-                <div className={`row ${mycss3.centre}`}>
-                  <div className={`lead mb-2 ${mycss3.centre} col-sm-3 `}>
+                <div className={`row ${mycss13.centre}`}>
+                  <div className={`lead mb-2 ${mycss13.centre} col-sm-3 `}>
                     Not your Mail?
                   </div>
                 </div>
 
-                <div className={`row ${mycss3.centre} mb-2`}>
+                <div className={`row ${mycss13.centre} mb-2`}>
                   <div className={`d-grid gap-2 col-sm-4 mx-auto`}>
                     <button
-                      className={`  mb-3 btn  ${mycss3["playstore-button"]}`}
+                      className={`  mb-3 btn  ${mycss13["playstore-button"]}`}
                       onClick={() => back_to_signup(data)}
                     >
                       Click here to Change!!

@@ -850,19 +850,15 @@ export const Userprofile = () => {
                       <br />
                       <br />
                       <br /> <br />
-                      <div className={mycss4.formobile1}>
-                        <Footer />
-                      </div>
                     </div>
                   </div>
                 </div>
-
-                {/* <div className="row bg-primary">hiiiiiiiiiiii</div> */}
               </div>
             </div>
-            <div className={mycss4.formobile2}>
-              <Footer />
-            </div>
+          </div>
+
+          <div className={` container-fluid`}>
+            <Footer />
           </div>
         </div>
       </div>

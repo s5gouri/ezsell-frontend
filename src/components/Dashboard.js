@@ -21,7 +21,7 @@ export const Dashboard = () => {
     const fetchBuyerData = async () => {
       try {
         const response = await axios.post(
-          "https://ezsell-backend.vercel.app/rag/find-rag",
+          "http://localhost:8000/rag/find-rag",
           {},
           {
             headers: {
@@ -43,7 +43,7 @@ export const Dashboard = () => {
     const fetchSellerData = async () => {
       try {
         const response = await axios.post(
-          "https://ezsell-backend.vercel.app/user/allposts",
+          "http://localhost:8000/user/allposts",
           {},
           {
             headers: {
@@ -65,7 +65,7 @@ export const Dashboard = () => {
     const user_details = async () => {
       try {
         const response1 = await axios.post(
-          "https://ezsell-backend.vercel.app/user",
+          "http://localhost:8000/user",
           {},
           {
             withCredentials: true,

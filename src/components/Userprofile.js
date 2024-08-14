@@ -33,7 +33,7 @@ export const Userprofile = () => {
     const get_history = async () => {
       try {
         const response = await axios.post(
-          "https://ezsell-backend.vercel.app/user/history",
+          "http://localhost:8000/user/history",
           {},
           {
             withCredentials: true,
@@ -50,7 +50,7 @@ export const Userprofile = () => {
     const user_details = async () => {
       try {
         const response1 = await axios.post(
-          "https://ezsell-backend.vercel.app/user/profile",
+          "http://localhost:8000/user/profile",
           {},
           {
             withCredentials: true,
@@ -64,7 +64,7 @@ export const Userprofile = () => {
           setconfirmation(1);
           setname(response1.data.user.name);
           setuserprofile(
-            `https://ezsell-backend.vercel.app${response1.data.user.profileimg}`
+            `http://localhost:8000${response1.data.user.profileimg}`
           );
           setphone(response1.data.user.phone);
           setemail(response1.data.user.email);
@@ -107,7 +107,7 @@ export const Userprofile = () => {
     const mailSend = async () => {
       try {
         const responseForSignup = await axios.post(
-          "https://ezsell-backend.vercel.app/user/updating",
+          "http://localhost:8000/user/updating",
           formData1,
           {
             headers: {
@@ -135,7 +135,7 @@ export const Userprofile = () => {
     const mailSend = async () => {
       try {
         const responseForSignup = await axios.post(
-          "https://ezsell-backend.vercel.app/user/update/password",
+          "http://localhost:8000/user/update/password",
           { PASSWORD },
           {
             withCredentials: true,
@@ -160,7 +160,7 @@ export const Userprofile = () => {
     if (FEEDBACK_HERE !== "") {
       try {
         const feedback_response = await axios.post(
-          "https://ezsell-backend.vercel.app/user/feedback",
+          "http://localhost:8000/user/feedback",
           { FEEDBACK_HERE },
           { withCredentials: true }
         );
@@ -604,7 +604,7 @@ export const Userprofile = () => {
                                 <div className={`row `}>
                                   <div className="col-md-6 mb-3 centre ">
                                     <img
-                                      src="https://ezsell-backend.vercel.app/backgrounds/bg8.jpg"
+                                      src="http://localhost:8000/backgrounds/bg8.jpg"
                                       alt="Unable to load at the moment"
                                       onClick={() => changebg(8)}
                                       width="250px"
@@ -625,7 +625,7 @@ export const Userprofile = () => {
                                 <div className={`row `}>
                                   <div className="col-md-6 mb-3 centre ">
                                     <img
-                                      src="https://ezsell-backend.vercel.app/backgrounds/bg7.jpeg"
+                                      src="http://localhost:8000/backgrounds/bg7.jpeg"
                                       alt="Unable to load at the moment"
                                       onClick={() => changebg(7)}
                                       width="250px"
@@ -648,7 +648,7 @@ export const Userprofile = () => {
                                 <div className={`row `}>
                                   <div className="col-md-6 mb-3 centre ">
                                     <img
-                                      src="https://ezsell-backend.vercel.app/backgrounds/bg6.jpg"
+                                      src="http://localhost:8000/backgrounds/bg6.jpg"
                                       alt="Unable to load at the moment"
                                       onClick={() => changebg(6)}
                                       width="250px"
@@ -669,7 +669,7 @@ export const Userprofile = () => {
                                 <div className={`row `}>
                                   <div className="col-md-6 mb-3 centre ">
                                     <img
-                                      src="https://ezsell-backend.vercel.app/backgrounds/bg5.jpeg"
+                                      src="http://localhost:8000/backgrounds/bg5.jpeg"
                                       alt="Unable to load at the moment"
                                       onClick={() => changebg(5)}
                                       width="250px"
@@ -693,7 +693,7 @@ export const Userprofile = () => {
                                 <div className={`row `}>
                                   <div className="col-md-6 mb-3 centre ">
                                     <img
-                                      src="https://ezsell-backend.vercel.app/backgrounds/bg1.jpg"
+                                      src="http://localhost:8000/backgrounds/bg1.jpg"
                                       alt="Unable to load at the moment"
                                       onClick={() => changebg(1)}
                                       width="250px"
@@ -714,7 +714,7 @@ export const Userprofile = () => {
                                 <div className={`row `}>
                                   <div className="col-md-6 mb-3 centre ">
                                     <img
-                                      src="https://ezsell-backend.vercel.app/backgrounds/bg2.jpg"
+                                      src="http://localhost:8000/backgrounds/bg2.jpg"
                                       alt="Unable to load at the moment"
                                       onClick={() => changebg(2)}
                                       width="250px"
@@ -738,7 +738,7 @@ export const Userprofile = () => {
                                 <div className={`row `}>
                                   <div className="col-md-6 mb-3 centre ">
                                     <img
-                                      src="https://ezsell-backend.vercel.app/backgrounds/bg3.webp"
+                                      src="http://localhost:8000/backgrounds/bg3.webp"
                                       alt="Unable to load at the moment"
                                       width="250px"
                                       onClick={() => changebg(3)}
@@ -759,7 +759,7 @@ export const Userprofile = () => {
                                 <div className={`row `}>
                                   <div className="col-md-6 mb-3 centre ">
                                     <img
-                                      src="https://ezsell-backend.vercel.app/backgrounds/bg4.webp"
+                                      src="http://localhost:8000/backgrounds/bg4.webp"
                                       alt="Unable to load at the moment"
                                       onClick={() => changebg(4)}
                                       width="250px"

@@ -13,7 +13,7 @@ export const Signin = () => {
     event.preventDefault();
     try {
       const response1 = await axios.post(
-        "https://ezsell-backend.vercel.app/log/sign-in",
+        "http://localhost:8000/log/sign-in",
         {
           EMAIL,
           PASSWORD,
@@ -44,7 +44,9 @@ export const Signin = () => {
         <div className="container">
           <div className={`row ${mycss10.centre1}`}>
             <div className={`col-md-2 ${mycss10.centre1}`}>
-              <div className={`fs-1 mb-3 ${mycss10.txt}`}>Sign-in to ezSell</div>
+              <div className={`fs-1 mb-3 ${mycss10.txt}`}>
+                Sign-in to ezSell
+              </div>
             </div>
             <div className={` col-md-9 `}>
               <div className={`row  bg-primar `}>

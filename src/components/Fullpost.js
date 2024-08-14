@@ -56,7 +56,7 @@ export const Fullpost = () => {
   const fetch_new_data = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/user/singlepost",
+        "https://ezsell-backend.vercel.app/user/singlepost",
         { post_id: all_data._id },
         {
           withCredentials: true,
@@ -75,7 +75,7 @@ export const Fullpost = () => {
   const send_request = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/rag/send-request",
+        "https://ezsell-backend.vercel.app/rag/send-request",
         { item_id: all_data._id, buyer: USER },
         { withCredentials: true }
       );
@@ -96,7 +96,7 @@ export const Fullpost = () => {
   const set = async (person) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/rag/accept-request",
+        "https://ezsell-backend.vercel.app/rag/accept-request",
         { item_id: all_data._id, buyer: person },
         { withCredentials: true }
       );
@@ -117,7 +117,7 @@ export const Fullpost = () => {
   const cancle_Deal = async (person) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/rag/cancle-request",
+        "https://ezsell-backend.vercel.app/rag/cancle-request",
         { item_id: all_data._id, buyer: person },
         { withCredentials: true }
       );
@@ -135,7 +135,7 @@ export const Fullpost = () => {
   const done = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/rag/completed",
+        "https://ezsell-backend.vercel.app/rag/completed",
         { item_id: all_data._id },
         { withCredentials: true }
       );
@@ -154,7 +154,7 @@ export const Fullpost = () => {
   const Delete_post = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/rag/delete-post",
+        "https://ezsell-backend.vercel.app/rag/delete-post",
         { item_id: all_data._id },
         { withCredentials: true }
       );
@@ -183,7 +183,7 @@ export const Fullpost = () => {
                 <div className="row mt-3">
                   <div className="col-md-6 ">
                     <a
-                      href={`http://localhost:8000${all_data.image}`}
+                      href={`https://ezsell-backend.vercel.app${all_data.image}`}
                       target="_main"
                     >
                       <div className="col-12 centre">
@@ -191,7 +191,7 @@ export const Fullpost = () => {
                           click to full view
                         </div>
                         <img
-                          src={`http://localhost:8000${all_data.image}`}
+                          src={`https://ezsell-backend.vercel.app${all_data.image}`}
                           alt="Unable to load at the moment"
                           className={`img-fluid rounded ${mycss3.hovimg}`}
                           style={{ maxWidth: "550px", maxHeight: "300px" }}
@@ -307,7 +307,7 @@ export const Fullpost = () => {
                                         className={`col-2  ${mycss3.centre}`}
                                       >
                                         <img
-                                          src={`http://localhost:8000${person.profileimg}`}
+                                          src={`https://ezsell-backend.vercel.app${person.profileimg}`}
                                           alt="loading"
                                           className={`rounded-circle mt-1 mb-1 ms-1  `}
                                           width="42px"
@@ -375,7 +375,7 @@ export const Fullpost = () => {
                                 <div className="row centre">
                                   <div className={`col-2 ${mycss3.centre}`}>
                                     <img
-                                      src={`http://localhost:8000${selected.profileimg}`}
+                                      src={`https://ezsell-backend.vercel.app${selected.profileimg}`}
                                       alt="loading"
                                       className={`rounded-circle mt-1 mb-1 ms-1  `}
                                       width="42px"
@@ -405,7 +405,7 @@ export const Fullpost = () => {
                                       <a
                                         className="btn btn-success centre me-1"
                                         style={{ maxHeight: "40px" }}
-                                        href={`http://localhost:8000${selected.qrcode}`}
+                                        href={`https://ezsell-backend.vercel.app${selected.qrcode}`}
                                         target="_main"
                                       >
                                         Pay

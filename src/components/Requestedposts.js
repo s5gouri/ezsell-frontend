@@ -19,7 +19,7 @@ export const Requestedposts = () => {
     const fetchBuyerData = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:8000/rag/requested/rags",
+          "https://ezsell-backend.vercel.app/rag/requested/rags",
           {},
           {
             withCredentials: true,
@@ -39,7 +39,7 @@ export const Requestedposts = () => {
     const user_details = async () => {
       try {
         const response1 = await axios.post(
-          "http://localhost:8000/user",
+          "https://ezsell-backend.vercel.app/user",
           {},
           {
             withCredentials: true,

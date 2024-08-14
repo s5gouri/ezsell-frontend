@@ -23,7 +23,7 @@ export const Waitingarea = () => {
   const mailSend = async (alldata) => {
     try {
       const responseForSignup = await axios.post(
-        "http://localhost:8000/log/sign-up",
+        "https://ezsell-backend.vercel.app/log/sign-up",
         alldata,
         {
           headers: {
@@ -52,7 +52,7 @@ export const Waitingarea = () => {
     const check = async () => {
       try {
         const responseForSignin = await axios.post(
-          "http://localhost:8000/log/sign-in",
+          "https://ezsell-backend.vercel.app/log/sign-in",
           {
             EMAIL,
             PASSWORD,

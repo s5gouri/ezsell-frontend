@@ -21,13 +21,13 @@ const App = () => {
     <ThemeProvider>
       <Routes>
         <Route path="/" element={<Landpage />} />
-        <Route path="/signup" element={<Signup />} />
         <Route path="/mail-confirm" element={<Waitingarea />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/user/dashboard" element={<Dashboard />} />
         <Route path="/user/sell-post" element={<Sellpost />} />
         <Route path="/user/profile" element={<Userprofile />} />
         <Route path="/post_view" element={<Fullpost />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/requested" element={<Requestedposts />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/change/password" element={<Forgot />} />

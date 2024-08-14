@@ -9,7 +9,7 @@ export const Payment = () => {
   const { mode, toggleMode, aaa, changebg, bg } = useTheme();
   const navigate = useNavigate();
   const [user, setuser] = useState(0);
-  const [confirmation, setconfirmation] = useState(0);
+  const [confirmation, setconfirmation] = useState(1);
   const [QRCODE, setqr] = useState(null);
   useEffect(() => {
     const fetch_details = async () => {

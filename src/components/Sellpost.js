@@ -13,7 +13,7 @@ export const Sellpost = (props) => {
   const [DESCRIPTION, setdescription] = useState("");
   const [PRICE, setprice] = useState("under 100");
   const [KABAD, setimg] = useState();
-  const [confirmation, setconfirmation] = useState(0);
+  const [confirmation, setconfirmation] = useState(1);
 
   useEffect(() => {
     const user_details = async () => {

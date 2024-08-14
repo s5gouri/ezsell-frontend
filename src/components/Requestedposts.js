@@ -11,7 +11,7 @@ export const Requestedposts = () => {
   const { mode, toggleMode, aaa, changebg, bg } = useTheme();
   // const navigate = useNavigate();
   const [list, setlist] = useState([]);
-  const [confirmation, setconfirmation] = useState(0);
+  const [confirmation, setconfirmation] = useState(1);
   const [ROLE, setrole] = useState("N_USER");
   const [viewer, setviewer] = useState(0);
   // request to get list of posts created

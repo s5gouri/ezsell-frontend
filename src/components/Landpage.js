@@ -7,7 +7,7 @@ import land1 from "../images/landingnew1.jpg";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 export const Landpage = () => {
-  const [confirmation, setconfirmation] = useState(1);
+  const [Confirmation, setconfirmation] = useState(1);
   const navigate = useNavigate();
   useEffect(() => {
     const user_details = async () => {

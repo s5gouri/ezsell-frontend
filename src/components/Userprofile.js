@@ -25,7 +25,7 @@ export const Userprofile = () => {
   const [BLOGCOUNT, setcount] = useState(0);
   const [POSTLIST, setlist] = useState([]);
   const [ROLE, setrole] = useState("N_USER");
-  const [confirmation, setconfirmation] = useState(1);
+  const [Confirmation, setconfirmation] = useState(1);
   const [FEEDBACK_HERE, setfeedback] = useState("");
   const [list, setlist2] = useState([]);
   const navigate = useNavigate();

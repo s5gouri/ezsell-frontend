@@ -13,7 +13,7 @@ export const Sellpost = (props) => {
   const [DESCRIPTION, setdescription] = useState("");
   const [PRICE, setprice] = useState("under 100");
   const [KABAD, setimg] = useState();
-  const [confirmation, setconfirmation] = useState(1);
+  const [Confirmation, setconfirmation] = useState(1);
 
   useEffect(() => {
     const user_details = async () => {
@@ -70,7 +70,7 @@ export const Sellpost = (props) => {
   };
   return (
     <>
-      <Navbar confirm={confirmation} />
+      <Navbar confirm={Confirmation} />
       <body className={`${bg} ${mode}`}>
         <div className="cont">
           <div className={`${mycss9.centre} container  pt-5`}>

@@ -13,7 +13,7 @@ export const Dashboard = () => {
   const { mode, toggleMode, aaa, changebg, bg } = useTheme();
   // const navigate = useNavigate();
   const [list, setlist] = useState([]);
-  const [confirmation, setconfirmation] = useState(1);
+  const [Confirmation, setconfirmation] = useState(1);
   const [ROLE, setrole] = useState("BUYER");
   const [viewer, setviewer] = useState(0);
   // request to get list of posts created
@@ -98,7 +98,7 @@ export const Dashboard = () => {
 
   return (
     <>
-      <Navbar confirm={confirmation} />
+      <Navbar confirm={Confirmation} />
 
       <div className={`${bg} ${mode} `}>
         <div className="cont">

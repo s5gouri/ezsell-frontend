@@ -848,7 +848,7 @@ export const Userprofile = () => {
                                 <u>History</u>
                               </div>
                               <div className="row">
-                                <div className="col-8 ms-2 me-2 mt-3 mb-4">
+                                <div className="col-md-8 ms-2 me-2 mt-3 mb-4">
                                   {list.map((post_detail) => (
                                     <Historyitem data={post_detail} />
                                   ))}

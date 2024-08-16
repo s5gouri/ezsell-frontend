@@ -238,7 +238,7 @@ export const Fullpost = () => {
 
                 <div
                   className={`row mt-2 mb-4 cont`}
-                  style={{ height: "180px" }}
+                  style={{ maxHeight: "180px" }}
                 >
                   <div className="col-12 ">
                     <div className="fs-5 mb-4  ">

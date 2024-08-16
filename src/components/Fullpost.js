@@ -169,6 +169,22 @@ export const Fullpost = () => {
     }
   };
   console.log("====0", all_data);
+  const openImage = () => {
+    const imageWindow = window.open();
+    imageWindow.document.write(`<img src="${all_data.image}" alt="Image" />`);
+  };
+  const handleCopyClick = (pnumber) => {
+    const tempInput = document.createElement("input");
+    tempInput.value = pnumber;
+    document.body.appendChild(tempInput);
+
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+
+    alert("Number copied to clipboard!");
+  };
+
   return (
     <>
       <Navbar confirm={1} />
@@ -182,22 +198,23 @@ export const Fullpost = () => {
               >
                 <div className="row mt-3">
                   <div className="col-md-6 ">
-                    <a
-                      href={`https://ezsell-backend.vercel.app${all_data.image}`}
-                      target="_main"
+                    <div
+                      className="col-12 centre"
+                      style={{ cursor: "pointer" }}
+                      onClick={openImage}
                     >
                       <div className="col-12 centre">
                         <div className={`${mycss3.onhovtext} centre fs-3`}>
                           click to full view
                         </div>
                         <img
-                          src={`https://ezsell-backend.vercel.app${all_data.image}`}
+                          src={all_data.image}
                           alt="Unable to load at the moment"
                           className={`img-fluid rounded ${mycss3.hovimg}`}
                           style={{ maxWidth: "550px", maxHeight: "300px" }}
                         />
                       </div>
-                    </a>
+                    </div>
                   </div>
                   <div className="col-md-6 centre">
                     <div className="row">
@@ -307,7 +324,7 @@ export const Fullpost = () => {
                                         className={`col-2  ${mycss3.centre}`}
                                       >
                                         <img
-                                          src={`https://ezsell-backend.vercel.app${person.profileimg}`}
+                                          src={person.profileimg}
                                           alt="loading"
                                           className={`rounded-circle mt-1 mb-1 ms-1  `}
                                           width="42px"
@@ -349,6 +366,9 @@ export const Fullpost = () => {
                                       <button
                                         className="btn btn-primary me-1 centre"
                                         style={{ maxHeight: "40px" }}
+                                        onClick={() =>
+                                          handleCopyClick(person.phone)
+                                        }
                                       >
                                         Copy Number
                                       </button>
@@ -375,7 +395,7 @@ export const Fullpost = () => {
                                 <div className="row centre">
                                   <div className={`col-2 ${mycss3.centre}`}>
                                     <img
-                                      src={`https://ezsell-backend.vercel.app${selected.profileimg}`}
+                                      src={selected.profileimg}
                                       alt="loading"
                                       className={`rounded-circle mt-1 mb-1 ms-1  `}
                                       width="42px"
@@ -405,7 +425,7 @@ export const Fullpost = () => {
                                       <a
                                         className="btn btn-success centre me-1"
                                         style={{ maxHeight: "40px" }}
-                                        href={`https://ezsell-backend.vercel.app${selected.qrcode}`}
+                                        href={selected.qrcode}
                                         target="_main"
                                       >
                                         Pay
@@ -415,6 +435,9 @@ export const Fullpost = () => {
                                   <button
                                     className="btn btn-primary me-1 centre"
                                     style={{ maxHeight: "40px" }}
+                                    onClick={() =>
+                                      handleCopyClick(selected.phone)
+                                    }
                                   >
                                     Copy No.
                                   </button>

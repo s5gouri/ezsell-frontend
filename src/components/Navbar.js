@@ -28,9 +28,7 @@ export const Navbar = (props) => {
           console.log(response1.data);
           console.log(response1.data.profileimg);
           setrole(response1.data.role);
-          setuserprofile(
-            `https://ezsell-backend.vercel.app${response1.data.profileimg}`
-          );
+          setuserprofile(response1.data.profileimg);
           setname(response1.data.name);
         } else {
           setbg(`${mycss7.navbar1}`);

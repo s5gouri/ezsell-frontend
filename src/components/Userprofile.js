@@ -14,9 +14,9 @@ export const Userprofile = () => {
   const [PHONE, setphone] = useState("");
   const [EMAIL, setemail] = useState("");
   const [ADDRESS, setaddress] = useState("");
-
+  const [USERPROF, setimg] = useState("");
   const [NEWNAME, setnewname] = useState("");
-  const [NEWUPROFILE, setnewuserprofile] = useState();
+  const [NEWUPROFILE, setnewuserprofile] = useState("nope");
   const [NEWADDRESS, setnewaddress] = useState("");
   const [NEWPHONE, setnewphone] = useState("");
   const [NEWEMAIL, setnewemail] = useState("");
@@ -63,9 +63,7 @@ export const Userprofile = () => {
           changebg(response1.data.user.background);
           setconfirmation(1);
           setname(response1.data.user.name);
-          setuserprofile(
-            `https://ezsell-backend.vercel.app${response1.data.user.profileimg}`
-          );
+          setuserprofile(response1.data.user.profileimg);
           setphone(response1.data.user.phone);
           setemail(response1.data.user.email);
           console.log(response1.data.user.adderess);
@@ -117,7 +115,9 @@ export const Userprofile = () => {
           }
         );
         if (responseForSignup.data === 1) {
-          alert("check mail");
+          setTimeout(() => {
+            window.location.reload(false);
+          }, 1000);
         }
       } catch (error) {
         console.log("Signup error", error);
@@ -125,9 +125,6 @@ export const Userprofile = () => {
       }
     };
     mailSend();
-    setTimeout(() => {
-      window.location.reload(false);
-    }, 1000);
   };
   const password_submit = (event) => {
     event.preventDefault();
@@ -175,6 +172,26 @@ export const Userprofile = () => {
     }
   };
 
+  const convertToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
+  const handleFileUpload = async (e) => {
+    setnewuserprofile(e.target.files[0]);
+    const file = e.target.files[0];
+    console.log("object", file);
+    const base64 = await convertToBase64(file);
+    setimg(base64);
+  };
   return (
     <>
       <Navbar confirm={1} />
@@ -377,13 +394,15 @@ export const Userprofile = () => {
                           <div
                             className={`col-md-4 mb-2 centre ${mycss12.formobile1}`}
                           >
-                            <img
-                              src={UPROFILE}
-                              alt="Unable to load.."
-                              className="rounded-circle"
-                              width="250px"
-                              height="250px"
-                            />
+                            <label htmlFor="exampleFormControlInput5">
+                              <img
+                                src={UPROFILE}
+                                alt="Unable to load.."
+                                className="rounded-circle"
+                                width="250px"
+                                height="250px"
+                              />
+                            </label>
                           </div>
                           <div className="col-md-8 ">
                             <p className="fs-5">Name : {FULLNAME}</p>
@@ -401,13 +420,15 @@ export const Userprofile = () => {
                           <div
                             className={`col-md-4 centre ${mycss12.formobile2}`}
                           >
-                            <img
-                              src={UPROFILE}
-                              alt="Unable to load.."
-                              className="rounded-circle"
-                              width="250px"
-                              height="250px"
-                            />
+                            <label htmlFor="exampleFormControlInput5">
+                              <img
+                                src={USERPROF || UPROFILE}
+                                alt="Unable to load.."
+                                className="rounded-circle"
+                                width="250px"
+                                height="250px"
+                              />
+                            </label>
                           </div>
                         </div>
                       </div>
@@ -463,9 +484,7 @@ export const Userprofile = () => {
                                         type="file"
                                         className={`form-control ${mycss12.a1} `}
                                         id="exampleFormControlInput5"
-                                        onChange={(e) =>
-                                          setnewuserprofile(e.target.files[0])
-                                        }
+                                        onChange={(e) => handleFileUpload(e)}
                                       />
                                     </div>
                                   </div>

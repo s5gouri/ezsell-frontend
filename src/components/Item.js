@@ -22,28 +22,34 @@ export const Item = (props) => {
     });
   };
 
+  const openImage = () => {
+    const imageWindow = window.open();
+    imageWindow.document.write(`<img src="${props.data.image}" alt="Image" />`);
+  };
   return (
     <>
       <div className={`${mode} card mb-3`} style={{ maxwidth: "540px" }}>
         <div className="row g-0">
           <div className="col-md-4">
-            <a
-              href={`https://ezsell-backend.vercel.app/${props.data.image}`}
-              target="_mail"
+            <div
+              className="col-12 centre"
+              style={{ cursor: "pointer" }}
+              onClick={openImage}
             >
+              {" "}
               <div className="col-12 centre">
                 <div className={`${mycss5.onhovtext} centre fs-3`}>
                   click to view
                 </div>
 
                 <img
-                  src={`https://ezsell-backend.vercel.app/${props.data.image}`}
+                  src={props.data.image}
                   className={`img-fluid rounded-end ${mycss5.hovimg}`}
                   alt="..."
                   style={{ maxwidth: "540px", maxHeight: "540px" }}
                 />
               </div>
-            </a>
+            </div>
           </div>
 
           <div className="col-md-8">

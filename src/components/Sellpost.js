@@ -12,7 +12,7 @@ export const Sellpost = (props) => {
   const [TITLE, settitle] = useState("");
   const [DESCRIPTION, setdescription] = useState("");
   const [PRICE, setprice] = useState("under 100");
-  const [KABAD, setimg] = useState();
+  const [KABAD, setimg] = useState("");
   const [Confirmation, setconfirmation] = useState(1);
 
   useEffect(() => {
@@ -43,15 +43,11 @@ export const Sellpost = (props) => {
 
   const handleSubmit1 = async (event) => {
     event.preventDefault();
-    const formData = new FormData();
-    formData.append("TITLE", TITLE);
-    formData.append("DESCRIPTION", DESCRIPTION);
-    formData.append("PRICE", PRICE);
-    formData.append("KABAD", KABAD);
+
     try {
       const response1 = await axios.post(
         "https://ezsell-backend.vercel.app/user/sell-post",
-        formData,
+        { KABAD, TITLE, DESCRIPTION, PRICE },
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -79,7 +75,10 @@ export const Sellpost = (props) => {
           <div className="container">
             <div className={`${mycss9.centre} row`}>
               <div className={`col-md-6 ${aaa} mt-4 text-start`}>
-                <form onSubmit={handleSubmit1} enctype="multipart/form-data">
+                <form
+                  onSubmit={(event) => handleSubmit1(event)}
+                  encType="multipart/form-data"
+                >
                   <div className="mb-3 mt-3">
                     <label
                       for="exampleFormControlInput1"

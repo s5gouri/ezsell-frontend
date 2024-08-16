@@ -64,7 +64,7 @@ export const Waitingarea = () => {
         console.log("from check function--", responseForSignin.data);
         if (responseForSignin.data === 1) {
           console.log("USER FOUND SUCCESFULLY");
-          navigate("/user/dashboard");
+          navigate("/setprofile");
         } else {
           setTimeout(() => {
             console.log("USER STILL NOT FOUND TRYING AGAIN IN 5sec");

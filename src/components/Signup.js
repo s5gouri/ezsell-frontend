@@ -38,9 +38,6 @@ export const Signup = () => {
           "https://ezsell-backend.vercel.app/log/sign-up",
           formData,
           {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
             withCredentials: true,
           }
         );
@@ -77,7 +74,7 @@ export const Signup = () => {
               </div>
             </div>
             <div className={`col-md-6 ${mycss11.aaa} `}>
-              <form onSubmit={handlesubmit} encType="multipart/form-data">
+              <form onSubmit={handlesubmit}>
                 <div className={`mb-1`}>
                   <label
                     htmlFor="exampleInputEmail1"
@@ -165,16 +162,19 @@ export const Signup = () => {
                 <div className={`mb-1 d-flex`}>
                   <div className={`col me-2`}>
                     <label
-                      htmlFor="exampleInputEmail5"
+                      htmlFor="exampleInputPassword6"
                       className={`form-label ${mycss11.txt}`}
                     >
-                      Profile:
+                      Password:
                     </label>
                     <input
-                      type="file"
+                      type="password"
                       className={`form-control  ${mycss11.aaa}`}
-                      id="exampleFormControlInput5"
-                      onChange={(e) => setprofile(e.target.files[0])}
+                      id="exampleInputPassword6"
+                      name="PASSWORD"
+                      value={PASSWORD}
+                      onChange={(e) => setpass(e.target.value)}
+                      required
                     />
                   </div>
                   <div className={`col`}>
@@ -200,26 +200,9 @@ export const Signup = () => {
                 </div>
                 <div className={`mb-1 d-flex`}>
                   <div className={`col`}>
-                    <label
-                      htmlFor="exampleInputPassword6"
-                      className={`form-label ${mycss11.txt}`}
-                    >
-                      Password:
-                    </label>
-                    <input
-                      type="password"
-                      className={`form-control  ${mycss11.aaa}`}
-                      id="exampleInputPassword6"
-                      name="PASSWORD"
-                      value={PASSWORD}
-                      onChange={(e) => setpass(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div className={`col ${mycss11.gd}`}>
                     <button
                       type="submit"
-                      className={`btn btn-outline-primary ms-3`}
+                      className={`btn btn-outline-info text-dark fs-5 m1-3 mt-2`}
                     >
                       Submit
                     </button>
@@ -228,7 +211,7 @@ export const Signup = () => {
               </form>
               <div className={`text-center`}>
                 <hr className={`a3 mb-1 white ${mycss11.txt}`} />
-                <h2 className={`text-center fs-5 white ${mycss11.txt}`}>
+                <h2 className={`text-center fs-5  text-dark`}>
                   Already have an account?
                 </h2>
                 <Link to="/signin">

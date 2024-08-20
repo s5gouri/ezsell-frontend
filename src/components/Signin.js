@@ -51,7 +51,7 @@ export const Signin = () => {
             <div className={` col-md-9 `}>
               <div className={`row  bg-primar `}>
                 <div className={`col-md-5 ${mycss10.hideimg} `}>
-                  <Link to="/">
+                  <Link to="https://ezsell-sg.vercel.app">
                     <img src={imag} alt="gg" height="500px" />
                   </Link>
                 </div>

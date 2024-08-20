@@ -60,7 +60,8 @@ export const Signup = () => {
     mailSend();
   };
   const loginwithgoogle = () => {
-    window.open("http://localhost:8000/auth/google/callback", "_self");
+    // window.open("http://localhost:8000/auth/google/callback", "_self");
+    console.log("hiii");
   };
   useEffect(() => {
     document.title = "Sign-up";

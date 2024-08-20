@@ -38,7 +38,8 @@ export const Signin = () => {
     }
   };
   const loginwithgoogle = () => {
-    window.open("http://localhost:8000/auth/google/callback", "_self");
+    // window.open("http://localhost:8000/auth/google/callback", "_self");
+    console.log("hii");
   };
   useEffect(() => {
     document.title = "Sign-in";

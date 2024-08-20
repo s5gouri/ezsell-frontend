@@ -38,14 +38,11 @@ export const Signin = () => {
     }
   };
   const loginwithgoogle = () => {
-    window.open(
-      "https://ezsell-backend.vercel.app/auth/google/callback",
-      "_self"
-    );
+    window.open("http://localhost:8000/auth/google/callback", "_self");
   };
-  useEffect(()=>{
-    document.title="Sign-in"
-  })
+  useEffect(() => {
+    document.title = "Sign-in";
+  });
   return (
     <>
       <Navbar confirm={4} />

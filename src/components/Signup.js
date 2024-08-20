@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import mycss11 from "./Signup.module.css";
@@ -59,16 +59,12 @@ export const Signup = () => {
     };
     mailSend();
   };
-
   const loginwithgoogle = () => {
-    window.open(
-      "https://ezsell-backend.vercel.app/auth/google/callback",
-      "_self"
-    );
+    window.open("http://localhost:8000/auth/google/callback", "_self");
   };
-  useEffect(()=>{
-    document.title="Sign-up"
-  })
+  useEffect(() => {
+    document.title = "Sign-up";
+  });
   return (
     <>
       <Navbar confirm={5} />

@@ -86,7 +86,7 @@ export const Navbar = (props) => {
                 mode === "dark" ? "light" : "dark"
               } fixed-top`}
             >
-              <Link className="navbar-brand ms-2" to="/">
+              <Link className="navbar-brand ms-2" to="https://ezsell-sg.vercel.app">
                 ezSell
               </Link>
               <button
@@ -227,7 +227,7 @@ export const Navbar = (props) => {
           props.confirm === 5) && (
           <>
             <nav className={`${BG}   z-3  navbar  navbar-expand fixed-top`}>
-              <Link className="navbar-brand text-light  fw-bold ms-2" to="/">
+              <Link className="navbar-brand text-light  fw-bold ms-2" to="https://ezsell-sg.vercel.app">
                 ezSell
               </Link>
 

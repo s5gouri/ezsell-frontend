@@ -10,10 +10,12 @@ export const Landpage = () => {
   const [Confirmation, setconfirmation] = useState(0);
   const navigate = useNavigate();
   useEffect(() => {
+    window.location.href = "https://ezsell-sg.vercel.app";
+
     const user_details = async () => {
       try {
         const response1 = await axios.post(
-          "https://ezsell-backend.vercel.app/user",
+          "http://localhost:8000/user",
           {},
           {
             withCredentials: true,

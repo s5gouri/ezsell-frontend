@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import mycss11 from "./Signup.module.css";
@@ -60,6 +60,15 @@ export const Signup = () => {
     mailSend();
   };
 
+  const loginwithgoogle = () => {
+    window.open(
+      "https://ezsell-backend.vercel.app/auth/google/callback",
+      "_self"
+    );
+  };
+  useEffect(()=>{
+    document.title="Sign-up"
+  })
   return (
     <>
       <Navbar confirm={5} />
@@ -199,16 +208,24 @@ export const Signup = () => {
                   </div>
                 </div>
                 <div className={`mb-1 d-flex`}>
-                  <div className={`col`}>
+                  <div className={`col centre`}>
                     <button
                       type="submit"
-                      className={`btn btn-outline-info text-dark fs-5 m1-3 mt-2`}
+                      className={`btn btn-outline-info text-dark fs-5 m1-3 mt-2 me-3`}
                     >
                       Submit
                     </button>
+                    <div className="centre me-3 mt-2 fs-4">OR</div>
+                    <div
+                      className="login-with-google-btn mt-2"
+                      onClick={loginwithgoogle}
+                    >
+                      Sign Up With Google
+                    </div>
                   </div>
                 </div>
               </form>
+
               <div className={`text-center`}>
                 <hr className={`a3 mb-1 white ${mycss11.txt}`} />
                 <h2 className={`text-center fs-5  text-dark`}>

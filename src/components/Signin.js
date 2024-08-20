@@ -7,8 +7,30 @@ import imag from "../images/signin.png";
 export const Signin = () => {
   const [EMAIL, setemail] = useState();
   const [PASSWORD, setpass] = useState();
-
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Sign-in";
+    const user_details = async () => {
+      try {
+        const response1 = await axios.post(
+          "https://ezsell-backend.vercel.app/user",
+          {},
+          {
+            withCredentials: true,
+          }
+        );
+        if (response1.data !== 0) {
+          window.location.href = "https://ezsell.vercel.app/user/dashboard";
+        }
+      } catch (error) {
+        console.log("Signup error-->", error);
+      }
+    };
+
+    user_details();
+  }, [navigate]);
+
   const handlesubmit = async (event) => {
     event.preventDefault();
     try {
@@ -41,9 +63,7 @@ export const Signin = () => {
     // window.open("http://localhost:8000/auth/google/callback", "_self");
     console.log("hii");
   };
-  useEffect(() => {
-    document.title = "Sign-in";
-  });
+
   return (
     <>
       <Navbar confirm={4} />

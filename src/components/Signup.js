@@ -64,6 +64,26 @@ export const Signup = () => {
     console.log("hiii");
   };
   useEffect(() => {
+    const user_details = async () => {
+      try {
+        const response1 = await axios.post(
+          "https://ezsell-backend.vercel.app/user",
+          {},
+          {
+            withCredentials: true,
+          }
+        );
+        if (response1.data !== 0) {
+          window.location.href = "https://ezsell.vercel.app/user/dashboard";
+        }
+      } catch (error) {
+        console.log("Signup error-->", error);
+      }
+    };
+
+    user_details();
+  }, [navigate]);
+  useEffect(() => {
     document.title = "Sign-up";
   });
   return (

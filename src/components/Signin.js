@@ -61,7 +61,7 @@ export const Signin = () => {
   };
   const loginwithgoogle = () => {
     window.open(
-      "https://ezsell-backend.vercel.app/auth/google?signup=noo",
+      "http://localhost:8000/auth/google?signup=noo",
       "_self"
     );
   };

@@ -16,6 +16,7 @@ import { Footer } from "./components/Footer.js";
 import { Forgot } from "./components/Forgot.js";
 import { Testing } from "./components/Testing.js";
 import { Setprofile } from "./components/Setprofile.js";
+import { Setrole } from "./components/Setrole.js";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/signin" element={<Signin />} />
         <Route path="/mail-confirm" element={<Waitingarea />} />
         <Route path="/setprofile" element={<Setprofile />} />
+        <Route path="/set-data" element={<Setrole />} />
 
         <Route path="/change/password" element={<Forgot />} />
         <Route path="/user/dashboard" element={<Dashboard />} />

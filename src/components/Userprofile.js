@@ -21,7 +21,7 @@ export const Userprofile = () => {
   const [NEWPHONE, setnewphone] = useState("");
   const [NEWEMAIL, setnewemail] = useState("");
   const [PASSWORD, setnewpass] = useState("");
-
+  const [PS, setps] = useState(1);
   const [BLOGCOUNT, setcount] = useState(0);
   const [POSTLIST, setlist] = useState([]);
   const [ROLE, setrole] = useState("N_USER");
@@ -59,6 +59,7 @@ export const Userprofile = () => {
 
         if (response1.data !== 0) {
           console.log(response1.data.user);
+
           console.log(response1.data.allpost);
           changebg(response1.data.user.background);
           setconfirmation(1);
@@ -71,6 +72,10 @@ export const Userprofile = () => {
           setcount(response1.data.allpost.length);
           setlist(response1.data.allpost);
           setrole(response1.data.user.role);
+          if (response1.data.user.password === "null") {
+            setps(0);
+            alert("we preffered to create password for your convenience");
+          }
         } else {
           navigate("/signin");
         }
@@ -128,6 +133,7 @@ export const Userprofile = () => {
   };
   const password_submit = (event) => {
     event.preventDefault();
+    setps(1);
     console.log(PASSWORD);
     const mailSend = async () => {
       try {
@@ -140,6 +146,7 @@ export const Userprofile = () => {
         );
         if (responseForSignup.data === 1) {
           alert("check mail");
+          setnewpass("");
         } else {
           alert("Something went wrong please try later");
         }
@@ -149,9 +156,6 @@ export const Userprofile = () => {
       }
     };
     mailSend();
-    setTimeout(() => {
-      window.location.reload(false);
-    }, 1000);
   };
   const give_feedback = async () => {
     if (FEEDBACK_HERE !== "") {
@@ -560,7 +564,8 @@ export const Userprofile = () => {
                                       for="exampleInputPassword6"
                                       className={`form-label `}
                                     >
-                                      Update Password:
+                                      {PS === 0 && <>Set a Password:</>}
+                                      {PS === 1 && <>Update Password:</>}
                                     </label>
                                     <input
                                       type="password"
@@ -580,7 +585,8 @@ export const Userprofile = () => {
                                     type="submit"
                                     className={`btn btn-primary mt-3`}
                                   >
-                                    Update Password
+                                    {PS === 0 && <>Set</>}
+                                    {PS === 1 && <>Update Password</>}
                                   </button>
                                 </div>
                               </div>

@@ -27,8 +27,15 @@ export const Sellpost = (props) => {
         );
 
         if (response1.data !== 0) {
-          console.log(response1.data);
-          setconfirmation(1);
+          console.log("noooooooooooo", response1.data.phone);
+
+          console.log("noooooooooooo", response1.data);
+          if (response1.data.phone === "Add Phone Number") {
+            alert("Please Add Address & Phone no. To Continue");
+            navigate("/user/profile");
+          } else {
+            setconfirmation(1);
+          }
         } else {
           navigate("/signin");
         }

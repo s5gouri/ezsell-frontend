@@ -21,7 +21,7 @@ export const Signin = () => {
           }
         );
         if (response1.data !== 0) {
-          window.location.href = "https://ezsell.vercel.app/user/dashboard";
+          window.location.href = "http://localhost:3000/user/dashboard";
         }
       } catch (error) {
         console.log("Signup error-->", error);
@@ -60,8 +60,10 @@ export const Signin = () => {
     }
   };
   const loginwithgoogle = () => {
-    // window.open("http://localhost:8000/auth/google/callback", "_self");
-    console.log("hii");
+    window.open(
+      "https://ezsell-backend.vercel.app/auth/google?signup=noo",
+      "_self"
+    );
   };
 
   return (

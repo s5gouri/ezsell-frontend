@@ -60,8 +60,10 @@ export const Signup = () => {
     mailSend();
   };
   const loginwithgoogle = () => {
-    // window.open("http://localhost:8000/auth/google/callback", "_self");
-    console.log("hiii");
+    window.open(
+      "https://ezsell-backend.vercel.app/auth/google?signup=yess",
+      "_self"
+    );
   };
   useEffect(() => {
     const user_details = async () => {
@@ -74,7 +76,7 @@ export const Signup = () => {
           }
         );
         if (response1.data !== 0) {
-          window.location.href = "https://ezsell.vercel.app/user/dashboard";
+          window.location.href = "http://localhost:3000/user/dashboard";
         }
       } catch (error) {
         console.log("Signup error-->", error);

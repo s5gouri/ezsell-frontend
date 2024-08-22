@@ -30,7 +30,9 @@ export const Sellpost = (props) => {
           console.log("noooooooooooo", response1.data.phone);
 
           console.log("noooooooooooo", response1.data);
-          if (response1.data.phone === "Add Phone Number") {
+          if (response1.data.role === "BUYER") {
+            navigate("/user/dashboard");
+          } else if (response1.data.phone === "Add Phone Number") {
             alert("Please Add Address & Phone no. To Continue");
             navigate("/user/profile");
           } else {

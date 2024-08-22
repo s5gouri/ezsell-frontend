@@ -112,6 +112,7 @@ export const Sellpost = (props) => {
                       type="file"
                       className="form-control"
                       id="exampleFormControlInput1"
+                      accept=".jpeg, .png, .jpg"
                       onChange={(e) => setimg(e.target.files[0])}
                       required
                     />

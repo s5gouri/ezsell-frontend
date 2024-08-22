@@ -5,14 +5,19 @@ import mycss4 from "./Item.module.css";
 export const Historyitem = (props) => {
   const navigate = useNavigate();
   const { mode, toggleMode, aaa, changebg, bg } = useTheme();
+  const openImage = () => {
+    const imageWindow = window.open();
+    imageWindow.document.write(`<img src="${props.data.image}" alt="Image" />`);
+  };
   return (
     <>
       <div className={`${mode} card mb-3`} style={{ maxwidth: "540px" }}>
         <div className="row g-0">
           <div className="col-md-4">
-            <a
-              href={props.data.image}
-              target="_mail"
+            <div
+              className="col-12 centre"
+              style={{ cursor: "pointer" }}
+              onClick={openImage}
             >
               <div className="col-12 centre  ">
                 <div className={`${mycss4.onhovtext} centre fs-3`}>
@@ -26,7 +31,7 @@ export const Historyitem = (props) => {
                   style={{ maxwidth: "540px", maxHeight: "540px" }}
                 />
               </div>
-            </a>
+            </div>
           </div>
 
           <div className="col-md-8">

@@ -88,6 +88,7 @@ export const Setprofile = () => {
                     <input
                       type="file"
                       id="selectimg"
+                      accept=".jpeg, .png, .jpg"
                       className="form-control bg-info text-light"
                       onChange={(e) => handleFileUpload(e)}
                     />

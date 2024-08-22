@@ -486,6 +486,7 @@ export const Userprofile = () => {
                                       </label>
                                       <input
                                         type="file"
+                                        accept=".jpeg, .png, .jpg"
                                         className={`form-control ${mycss12.a1} `}
                                         id="exampleFormControlInput5"
                                         onChange={(e) => handleFileUpload(e)}

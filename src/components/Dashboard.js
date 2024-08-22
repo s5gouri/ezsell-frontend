@@ -96,7 +96,7 @@ export const Dashboard = () => {
     user_details();
     const intervalId = setInterval(() => {
       window.location.reload();
-    }, 30000);
+    }, 120000);
     return () => clearInterval(intervalId);
   }, []);
 

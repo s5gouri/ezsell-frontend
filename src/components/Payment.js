@@ -137,6 +137,7 @@ export const Payment = () => {
                           </label>
                           <input
                             type="file"
+                            accept=".jpeg, .png, .jpg"
                             className={`form-control text-success`}
                             id="exampleInputEmail5"
                             onChange={(e) => handleFileUpload(e)}

@@ -76,7 +76,7 @@ export const Signup = () => {
           }
         );
         if (response1.data !== 0) {
-          window.location.href = "http://localhost:3000/user/dashboard";
+          window.location.href = "https://ezsell.vercel.app/user/dashboard";
         }
       } catch (error) {
         console.log("Signup error-->", error);

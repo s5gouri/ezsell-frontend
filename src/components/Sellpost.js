@@ -14,7 +14,7 @@ export const Sellpost = (props) => {
   const [PRICE, setprice] = useState("under 100");
   const [KABAD, setimg] = useState("");
   const [Confirmation, setconfirmation] = useState(1);
-
+  const [send, setsend] = useState(false);
   useEffect(() => {
     const user_details = async () => {
       try {
@@ -28,11 +28,8 @@ export const Sellpost = (props) => {
 
         if (response1.data !== 0) {
           console.log("noooooooooooo", response1.data.phone);
-
           console.log("noooooooooooo", response1.data);
-          if (response1.data.role === "BUYER") {
-            navigate("/user/dashboard");
-          } else if (response1.data.phone === "Add Phone Number") {
+          if (response1.data.phone === "Add Phone Number") {
             alert("Please Add Address & Phone no. To Continue");
             navigate("/user/profile");
           } else {
@@ -52,7 +49,7 @@ export const Sellpost = (props) => {
 
   const handleSubmit1 = async (event) => {
     event.preventDefault();
-
+    setsend(true);
     try {
       const response1 = await axios.post(
         "https://ezsell-backend.vercel.app/user/sell-post",
@@ -72,6 +69,7 @@ export const Sellpost = (props) => {
     } catch {
       console.log("error");
     }
+    setsend(false);
   };
   return (
     <>
@@ -162,8 +160,9 @@ export const Sellpost = (props) => {
                     <button
                       type="submit"
                       className="btn btn-outline-success mt-3"
+                      disabled={send}
                     >
-                      Submit
+                      {send === true ? "Please wait..." : "Submit"}
                     </button>
                   </div>
                 </form>

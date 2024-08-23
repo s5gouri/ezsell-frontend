@@ -6,21 +6,21 @@ import axios from "axios";
 import { Item } from "./Item";
 import "../common.css";
 import mycss1 from "./Dashboard.module.css";
-import { styled } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Footer } from "./Footer";
-export const Dashboard = () => {
+export const Buyerhome = () => {
   const { mode, aaa, changebg, bg } = useTheme();
   // const navigate = useNavigate();
   const [list, setlist] = useState([]);
   const [Confirmation, setconfirmation] = useState(1);
   const [viewer, setviewer] = useState(0);
+
   // request to get list of posts created
   useEffect(() => {
-    const fetchSellerData = async () => {
+    const fetchBuyerData = async () => {
       try {
         const response = await axios.post(
-          "https://ezsell-backend.vercel.app/user/allposts",
+          "https://ezsell-backend.vercel.app/rag/find-rag",
           {},
           {
             headers: {
@@ -39,6 +39,7 @@ export const Dashboard = () => {
         console.error("Error fetching data:", error);
       }
     };
+
     const user_details = async () => {
       try {
         const response1 = await axios.post(
@@ -52,8 +53,7 @@ export const Dashboard = () => {
           setviewer(response1.data);
           setconfirmation(1);
           changebg(response1.data.back);
-          fetchSellerData();
-          console.log("Seller Detected");
+          fetchBuyerData();
         } else {
           setconfirmation(3);
         }
@@ -82,47 +82,24 @@ export const Dashboard = () => {
               >
                 <div className="row">
                   <div
-                    className={`col-md-8 border-right mt-1 rounded ${mycss1.forflow} `}
+                    className={`col-12 border-right mt-1 rounded ${mycss1.forflow} `}
                     style={{ maxHeight: "600px" }}
                   >
                     <br />
-                    {list.length === 0 && (
-                      <Link to="/user/sell-post">
-                        <div
-                          className={` fs-1 ${
-                            mode === "dark" ? "text-dark" : "text-light"
-                          }`}
-                        >
-                          Start Selling
-                        </div>
-                      </Link>
-                    )}
-
-                    {list.map((post_detail) => (
-                      <Item
-                        data={post_detail}
-                        userrole={"N_USER"}
-                        view={viewer}
-                      />
-                    ))}
-                  </div>
-
-                  <div className={`col-md-4 ${mycss1.right}`}>
-                    <div className="row centre">
-                      <div className="fs-3 centre">Our top Buyers</div>
-                      <div className="ima centre mt-4">
-                        <img
-                          src={buyer_img}
-                          className=" rounded-circle"
-                          alt="Unable to load at the moment..."
-                          width="250px"
-                          height="200px"
-                        />
-                      </div>
-                      <p className="fs-5">Name : Rajesh Kumar</p>
-                      <p className="fs-5">Address :New Delhi</p>
-                      <p className="fs-5">Ratings :⭐⭐⭐⭐</p>
-                    </div>
+                    {list.map((post_detail) => {
+                      if (post_detail.user.email !== viewer.email) {
+                        return (
+                          <Item
+                            key={post_detail.id} // Include a key prop for better performance
+                            data={post_detail}
+                            userrole={"BUYER"}
+                            view={viewer}
+                          />
+                        );
+                      } else {
+                        return null; // If the condition is not met, return null to avoid rendering anything.
+                      }
+                    })}
                   </div>
                 </div>
               </div>

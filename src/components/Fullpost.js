@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
-
 import { useLocation, useNavigate } from "react-router-dom";
 import "../common.css";
 import mycss3 from "./Fullpost.module.css";
@@ -17,11 +16,13 @@ export const Fullpost = () => {
   const [selected, setselected] = useState(0);
   const [USER, setuser] = useState("");
   const [buyers_list, setlist] = useState([]);
+  const urole = useRef("");
+  const [send, setsend] = useState(false);
 
   const location = useLocation();
-  const { all_data, user } = location.state;
+  const { all_data, user, role } = location.state;
   useEffect(() => {
-    console.log("=======11", all_data);
+    urole.current = role;
     setuser(user);
     setlist(all_data.buyers);
     if (all_data.final_buyer.length === 1) {
@@ -73,6 +74,7 @@ export const Fullpost = () => {
   };
 
   const send_request = async () => {
+    setsend(true);
     try {
       const response = await axios.post(
         "https://ezsell-backend.vercel.app/rag/send-request",
@@ -91,9 +93,11 @@ export const Fullpost = () => {
     } catch {
       alert("Unable to send request please try later");
     }
+    setsend(false);
   };
 
   const set = async (person) => {
+    setsend(true);
     try {
       const response = await axios.post(
         "https://ezsell-backend.vercel.app/rag/accept-request",
@@ -113,8 +117,10 @@ export const Fullpost = () => {
     } catch {
       alert("Unable to send request please try later");
     }
+    setsend(false);
   };
   const cancle_Deal = async (person) => {
+    setsend(true);
     try {
       const response = await axios.post(
         "https://ezsell-backend.vercel.app/rag/cancle-request",
@@ -130,9 +136,11 @@ export const Fullpost = () => {
     } catch {
       alert("Unable to cancle request please try later");
     }
+    setsend(false);
   };
 
   const done = async () => {
+    setsend(true);
     try {
       const response = await axios.post(
         "https://ezsell-backend.vercel.app/rag/completed",
@@ -150,8 +158,10 @@ export const Fullpost = () => {
     } catch {
       alert("Unable to send request please try later");
     }
+    setsend(false);
   };
   const Delete_post = async () => {
+    setsend(true);
     try {
       const response = await axios.post(
         "https://ezsell-backend.vercel.app/rag/delete-post",
@@ -167,8 +177,8 @@ export const Fullpost = () => {
     } catch {
       alert("Unable to send request please try later");
     }
+    setsend(false);
   };
-  console.log("====0", all_data);
   const openImage = () => {
     const imageWindow = window.open();
     imageWindow.document.write(`<img src="${all_data.image}" alt="Image" />`);
@@ -225,7 +235,7 @@ export const Fullpost = () => {
                         Estimated price:
                         {all_data.price}
                       </div>
-                      {USER.role === "BUYER" && (
+                      {urole.current === "BUYER" && (
                         <>
                           <div className=" centre  fs-3">
                             Location :{all_data.user.adderess}
@@ -247,7 +257,7 @@ export const Fullpost = () => {
                     <pre className="fs-6">{all_data.description}</pre>
                   </div>
                 </div>
-                {USER.role === "N_USER" && (
+                {urole.current === "N_USER" && (
                   <>
                     <div className="row mt-2 mb-2 centre">
                       <div className="col-12">
@@ -281,22 +291,49 @@ export const Fullpost = () => {
                 )}
 
                 <div className="row mt-2 centre mb-3">
-                  <div className="col-4 centre">
-                    {USER.role === "BUYER" && show === 0 && (
-                      <>
-                        <button
-                          className={`btn btn-outline-success fs-5 `}
-                          onClick={send_request}
-                        >
-                          Send Confirmation
-                        </button>
-                      </>
-                    )}
-                    {USER.role === "BUYER" && show === 2 && (
-                      <>
-                        <div className="fs-2">U have been selected</div>
-                      </>
-                    )}
+                  <div className="col-md-4 ">
+                    <div className="row">
+                      {urole.current === "BUYER" && show === 0 && (
+                        <>
+                          <button
+                            className={`btn btn-outline-success fs-5 `}
+                            disabled={send}
+                            onClick={send_request}
+                          >
+                            {send === true
+                              ? "Please wait..."
+                              : "Send Confirmation"}
+                          </button>
+                        </>
+                      )}
+                    </div>
+                    <div className="row">
+                      {urole.current === "BUYER" && show === 2 && (
+                        <>
+                          <div className="fs-2 centre">
+                            U have been selected
+                          </div>
+                          <div className="centre">
+                            {all_data.user.qrcode !== "null" && (
+                              <>
+                                <a
+                                  className="btn btn-success centre me-1 ms-4"
+                                  style={{
+                                    maxHeight: "40px",
+                                    maxWidth: "200px",
+                                  }}
+                                  href={all_data.user.qrcode}
+                                  target="_main"
+                                >
+                                  Pay the Amount to user
+                                </a>
+                              </>
+                            )}
+                          </div>
+                        </>
+                      )}
+                    </div>
+
                     {show === 1 && (
                       <>
                         <div className="fs-2">Requested </div>
@@ -304,18 +341,18 @@ export const Fullpost = () => {
                     )}
                   </div>
                 </div>
-                {USER.role === "N_USER" &&
+                {urole.current === "N_USER" &&
                   buyers_list.length !== 0 &&
                   selected === 0 && (
                     <>
-                      <div className="row mt-2">
+                      <div className="row mt-2 ms-1 me-1">
                         <div
-                          className={` ${mycss3.buyerlist} col-12 centre mt-1 mb-1`}
+                          className={` ${mycss3.buyerlist} col-12  mt-1 mb-1`}
                         >
                           {buyers_list.map((person) => (
                             <>
                               <div
-                                className={`mt-1 col-12 ${mycss3.buyerlist} ms-1 mb-1 me-1  `}
+                                className={`mt-2 col-12 ${mycss3.buyerlist} ms-1 mb-2 me-1  `}
                               >
                                 <div className="row">
                                   <div className="col-md-6 ">
@@ -352,15 +389,21 @@ export const Fullpost = () => {
                                     <div className="col flex-row-reverse d-flex ">
                                       <button
                                         className="btn btn-danger me-3"
+                                        disabled={send}
                                         onClick={() => cancle_Deal(person)}
                                       >
-                                        Decline
+                                        {send === true
+                                          ? "Please wait..."
+                                          : "Decline"}
                                       </button>
                                       <button
                                         className="btn btn-success me-1"
+                                        disabled={send}
                                         onClick={() => set(person)}
                                       >
-                                        Accept
+                                        {send === true
+                                          ? "Please wait..."
+                                          : "Accept"}
                                       </button>
 
                                       <button
@@ -382,7 +425,7 @@ export const Fullpost = () => {
                       </div>
                     </>
                   )}
-                {selected !== 0 && USER.role === "N_USER" && (
+                {selected !== 0 && urole.current === "N_USER" && (
                   <>
                     <>
                       <div className="row mt-2">
@@ -420,18 +463,6 @@ export const Fullpost = () => {
 
                               <div className="col-md-5 centre mb-1 mt-1 ">
                                 <div className="col d-flex  justify-content-end">
-                                  {selected.qrcode !== "null" && (
-                                    <>
-                                      <a
-                                        className="btn btn-success centre me-1"
-                                        style={{ maxHeight: "40px" }}
-                                        href={selected.qrcode}
-                                        target="_main"
-                                      >
-                                        Pay
-                                      </a>
-                                    </>
-                                  )}
                                   <button
                                     className="btn btn-primary me-1 centre"
                                     style={{ maxHeight: "40px" }}
@@ -444,16 +475,20 @@ export const Fullpost = () => {
                                   <button
                                     className="btn btn-success me-2"
                                     onClick={() => done()}
+                                    disabled={send}
                                     style={{ maxHeight: "40px" }}
                                   >
-                                    Done
+                                    {send === true ? "Please wait..." : "Done"}
                                   </button>
                                   <button
                                     className="btn btn-danger me-1 centre"
                                     onClick={() => Delete_post()}
+                                    disabled={send}
                                     style={{ maxHeight: "40px" }}
                                   >
-                                    Cancle Deal
+                                    {send === true
+                                      ? "Please wait..."
+                                      : "Cancle Deal"}
                                   </button>
                                 </div>
                               </div>

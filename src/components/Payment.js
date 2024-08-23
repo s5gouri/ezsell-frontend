@@ -23,17 +23,13 @@ export const Payment = () => {
           { withCredentials: true }
         );
         if (rep.data !== 0) {
-          if (rep.data.role === "BUYER") {
-            setuser(rep.data);
-            if (rep.data.qrcode !== "null") {
-              setimg(rep.data.qrcode);
-            }
-            setconfirmation(1);
-            console.log("=====", rep.data);
-          } else if (rep.data.role === "N_USER") {
-            alert("YOU ARE UN AUTHORISED");
-            navigate("/user/dashboard");
+          setuser(rep.data);
+          if (rep.data.qrcode !== "null") {
+            setimg(rep.data.qrcode);
           }
+
+          setconfirmation(1);
+          console.log("=====", rep.data);
         } else {
           alert("YOU ARE UN AUTHORISED");
           navigate("/signin");

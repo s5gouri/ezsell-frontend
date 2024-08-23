@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
@@ -6,9 +6,11 @@ import "../common.css";
 export const Forgot = () => {
   const [EMAIL, setemail] = useState("");
   const [PASSWORD, setpass] = useState("");
+  const [send, setsend] = useState(false);
   const navigate = useNavigate();
   const handle_submit = async (e) => {
     e.preventDefault();
+    setsend(true);
     const response1 = await axios.post(
       "https://ezsell-backend.vercel.app/user/forgot",
       {
@@ -24,9 +26,11 @@ export const Forgot = () => {
       alert("check your email for password reset link");
       navigate("/signin");
     } else {
-      alert("Please enter correct email and password");
+      alert("No User Found");
     }
-    window.location.reload(false);
+    setsend(false);
+
+    // window.location.reload(false);
   };
   return (
     <>
@@ -68,8 +72,8 @@ export const Forgot = () => {
                     required
                   />
                 </div>
-                <button type="submit" className="btn btn-info">
-                  Submit
+                <button type="submit" className="btn btn-info" disabled={send}>
+                  {send === true ? "Please wait..." : "Submit"}
                 </button>
               </form>
             </div>

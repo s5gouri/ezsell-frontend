@@ -18,7 +18,7 @@ export const Item = (props) => {
   }, [props.data.status]);
   const full_post = () => {
     navigate("/post_view", {
-      state: { all_data: props.data, user: props.view },
+      state: { all_data: props.data, user: props.view, role: props.userrole },
     });
   };
 
@@ -65,7 +65,7 @@ export const Item = (props) => {
                 {props.data.description}
               </p>
               <p className="card-text">
-                {props.view.role === "N_USER" && (
+                {props.userrole === "N_USER" && (
                   <>
                     <small
                       className={` ${
@@ -93,7 +93,7 @@ export const Item = (props) => {
                     </div>
                   </>
                 )}
-                {props.view.role === "N_USER" &&
+                {props.userrole === "N_USER" &&
                   props.data.buyers.length !== 0 && (
                     <button
                       type="button"
@@ -111,8 +111,8 @@ export const Item = (props) => {
                       </span>
                     </button>
                   )}
-                {(props.view.role === "BUYER" ||
-                  (props.view.role === "N_USER" &&
+                {(props.userrole === "BUYER" ||
+                  (props.userrole === "N_USER" &&
                     props.data.buyers.length === 0)) && (
                   <button
                     onClick={full_post}

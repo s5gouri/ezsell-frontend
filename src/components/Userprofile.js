@@ -24,10 +24,14 @@ export const Userprofile = () => {
   const [PS, setps] = useState(1);
   const [BLOGCOUNT, setcount] = useState(0);
   const [POSTLIST, setlist] = useState([]);
-  const [ROLE, setrole] = useState("N_USER");
   const [Confirmation, setconfirmation] = useState(1);
   const [FEEDBACK_HERE, setfeedback] = useState("");
   const [list, setlist2] = useState([]);
+
+  const [send1, setsend1] = useState(false);
+  const [send2, setsend2] = useState(false);
+  const [send3, setsend3] = useState(false);
+
   const navigate = useNavigate();
   useEffect(() => {
     const get_history = async () => {
@@ -71,7 +75,7 @@ export const Userprofile = () => {
           setaddress(response1.data.user.adderess);
           setcount(response1.data.allpost.length);
           setlist(response1.data.allpost);
-          setrole(response1.data.user.role);
+
           if (response1.data.user.password === "null") {
             setps(0);
             alert("we preffered to create password for your convenience");
@@ -89,17 +93,11 @@ export const Userprofile = () => {
     get_history();
   }, [navigate]);
 
-  const handlenewsubmit = async (event) => {
-    event.preventDefault();
+  const handlenewsubmit = async (e) => {
+    e.preventDefault();
+    setsend1(true);
+    console.log("hiiiiiiiiiiiiiiiiiiiiiiii", send1);
 
-    const data = {
-      NEWNAME,
-      NEWPHONE,
-      EMAIL,
-      PASSWORD,
-      NEWADDRESS,
-      NEWUPROFILE,
-    };
     const formData1 = new FormData();
     formData1.append("FULLNAME", NEWNAME);
     formData1.append("PHONE", NEWPHONE);
@@ -130,9 +128,11 @@ export const Userprofile = () => {
       }
     };
     mailSend();
+    setsend1(false);
   };
-  const password_submit = (event) => {
-    event.preventDefault();
+  const password_submit = (e) => {
+    e.preventDefault();
+    setsend2(true);
     setps(1);
     console.log(PASSWORD);
     const mailSend = async () => {
@@ -156,8 +156,12 @@ export const Userprofile = () => {
       }
     };
     mailSend();
+    setsend2(false);
   };
   const give_feedback = async () => {
+    setsend3(true);
+    console.log("hiiiiiiiiiiiiiiiiiiiiiiii", send3);
+
     if (FEEDBACK_HERE !== "") {
       try {
         const feedback_response = await axios.post(
@@ -174,6 +178,7 @@ export const Userprofile = () => {
     } else {
       alert("please enter feedback");
     }
+    setsend3(false);
   };
 
   const convertToBase64 = (file) => {
@@ -302,26 +307,23 @@ export const Userprofile = () => {
                           </button>
                         </a>
                       </li>
-                      {ROLE === "N_USER" && (
-                        <>
-                          <li>
-                            <a
-                              className={`nav-link  ${mode} mt-2 d-grid gap-2 d-md-block `}
-                              href="#HISTORY"
-                              aria-label="Close"
-                              data-bs-dismiss="offcanvas"
-                            >
-                              <button
-                                className={` ${mode} btn ${mycss12.a1}`}
-                                data-bs-dismiss="offcanvas"
-                                aria-label="Close"
-                              >
-                                History
-                              </button>
-                            </a>
-                          </li>
-                        </>
-                      )}
+
+                      <li>
+                        <a
+                          className={`nav-link  ${mode} mt-2 d-grid gap-2 d-md-block `}
+                          href="#HISTORY"
+                          aria-label="Close"
+                          data-bs-dismiss="offcanvas"
+                        >
+                          <button
+                            className={` ${mode} btn ${mycss12.a1}`}
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                          >
+                            History
+                          </button>
+                        </a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -366,18 +368,15 @@ export const Userprofile = () => {
                             Feedback
                           </a>
                         </li>
-                        {ROLE === "N_USER" && (
-                          <>
-                            <li>
-                              <a
-                                className={`nav-link ${mode} ms-1 mt-2 centre ${mycss12.a1}`}
-                                href="#HISTORY"
-                              >
-                                History
-                              </a>
-                            </li>
-                          </>
-                        )}
+
+                        <li>
+                          <a
+                            className={`nav-link ${mode} ms-1 mt-2 centre ${mycss12.a1}`}
+                            href="#HISTORY"
+                          >
+                            History
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </nav>
@@ -413,13 +412,8 @@ export const Userprofile = () => {
                             <p className="fs-5">Email : {EMAIL}</p>
                             <p className="fs-5">Phone : {PHONE}</p>
                             <p className="fs-5">Address :{ADDRESS}</p>
-                            {ROLE === "N_USER" && (
-                              <>
-                                <p className="fs-5">
-                                  Total posts : {BLOGCOUNT}
-                                </p>
-                              </>
-                            )}
+
+                            <p className="fs-5">Total posts : {BLOGCOUNT}</p>
                           </div>
                           <div
                             className={`col-md-4 centre ${mycss12.formobile2}`}
@@ -450,7 +444,7 @@ export const Userprofile = () => {
                         <div className="row me-1">
                           <div className={`col-auto mt-2 mb-2`}>
                             <form
-                              onSubmit={handlenewsubmit}
+                              onSubmit={(e) => handlenewsubmit(e)}
                               enctype="multipart/form-data"
                             >
                               <div className="col-md-12">
@@ -548,9 +542,12 @@ export const Userprofile = () => {
                                   <div className={`col-md-2  ${mycss12.gd}`}>
                                     <button
                                       type="submit"
+                                      disabled={send1}
                                       className={`btn btn-primary mt-3`}
                                     >
-                                      Update
+                                      {send1 === true
+                                        ? "Please wait..."
+                                        : "Update"}
                                     </button>
                                   </div>
                                 </div>
@@ -584,6 +581,7 @@ export const Userprofile = () => {
                                 <div className={`col-md-1  ${mycss12.gd}`}>
                                   <button
                                     type="submit"
+                                    disabled={send1 || send2 || send3}
                                     className={`btn btn-primary mt-3`}
                                   >
                                     {PS === 0 && <>Set</>}
@@ -838,37 +836,36 @@ export const Userprofile = () => {
 
                             <button
                               className={`btn btn-outline-${mode} mt-3 mb-3 ms-3`}
+                              disabled={send1 || send2 || send3}
                               onClick={() => give_feedback()}
                             >
-                              Submit Feedback
+                              {send3 === true
+                                ? "Please wait..."
+                                : "Submit Feedback"}
                             </button>
                           </div>
                         </div>
                       </div>
                       <hr className={mode} />
-                      {ROLE === "N_USER" && (
-                        <>
-                          <div id="HISTORY">
-                            <div className="row me-1">
-                              {}
-                              <div className="fs-4 mb-2 ">
-                                <u>History</u>
-                              </div>
-                              <div className="row">
-                                <div className="col-md-8 ms-2 me-2 mt-3 mb-4">
-                                  {list.map((post_detail) => (
-                                    <Historyitem data={post_detail} />
-                                  ))}
-                                </div>
-                              </div>
+                      <div id="HISTORY">
+                        <div className="row me-1">
+                          {}
+                          <div className="fs-4 mb-2 ">
+                            <u>History</u>
+                          </div>
+                          <div className="row">
+                            <div className="col-md-8 ms-2 me-2 mt-3 mb-4">
+                              {list.map((post_detail) => (
+                                <Historyitem data={post_detail} />
+                              ))}
                             </div>
                           </div>
-                          <br />
-                          <br />
-                          <br />
-                          <br />
-                        </>
-                      )}
+                        </div>
+                      </div>
+                      <br />
+                      <br />
+                      <br />
+                      <br />
                       <br />
                       <br />
                       <br />

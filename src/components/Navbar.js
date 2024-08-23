@@ -8,7 +8,6 @@ export const Navbar = (props) => {
   const { mode, toggleMode } = useTheme();
   const [FULLNAME, setname] = useState("");
   const [UPROFILE, setuserprofile] = useState("/");
-  const [ROLE, setrole] = useState("N_USER");
   const [BG, setbg] = useState(`${mycss7.navbar}`);
   const [confirm, setconfirm] = useState(1);
   const navigate = useNavigate();
@@ -27,7 +26,6 @@ export const Navbar = (props) => {
         if (response1.data !== 0) {
           console.log(response1.data);
           console.log(response1.data.profileimg);
-          setrole(response1.data.role);
           setuserprofile(response1.data.profileimg);
           setname(response1.data.name);
         } else {
@@ -117,41 +115,44 @@ export const Navbar = (props) => {
                       Home
                     </Link>
                   </li>
-                  {ROLE !== "BUYER" && (
-                    <>
-                      <li className="nav-item">
-                        <Link
-                          to="/user/sell-post"
-                          className="nav-link active ms-2"
-                          aria-current="page"
-                        >
-                          Sell Items
-                        </Link>
-                      </li>
-                    </>
-                  )}
-                  {ROLE === "BUYER" && (
-                    <>
-                      <li className="nav-item">
-                        <Link
-                          to="/requested"
-                          className="nav-link active ms-2"
-                          aria-current="page"
-                        >
-                          Accepted requests
-                        </Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link
-                          to="/payment"
-                          className="nav-link active ms-2"
-                          aria-current="page"
-                        >
-                          Add payment method
-                        </Link>
-                      </li>
-                    </>
-                  )}
+
+                  <li className="nav-item">
+                    <Link
+                      to="/user/sell-post"
+                      className="nav-link active ms-2"
+                      aria-current="page"
+                    >
+                      Sell Items
+                    </Link>
+                  </li>
+
+                  <li className="nav-item">
+                    <Link
+                      to="/user/buyerdashboard"
+                      className="nav-link active ms-2"
+                      aria-current="page"
+                    >
+                      For sale
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      to="/requested"
+                      className="nav-link active ms-2"
+                      aria-current="page"
+                    >
+                      Accepted requests
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      to="/payment"
+                      className="nav-link active ms-2"
+                      aria-current="page"
+                    >
+                      Add payment method
+                    </Link>
+                  </li>
 
                   <li className="nav-item dropdown">
                     <a

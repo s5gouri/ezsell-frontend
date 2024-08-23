@@ -17,6 +17,7 @@ import { Forgot } from "./components/Forgot.js";
 import { Testing } from "./components/Testing.js";
 import { Setprofile } from "./components/Setprofile.js";
 import { Setrole } from "./components/Setrole.js";
+import { Buyerhome } from "./components/Buyerhome.js";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
 
         <Route path="/change/password" element={<Forgot />} />
         <Route path="/user/dashboard" element={<Dashboard />} />
+        <Route path="/user/buyerdashboard" element={<Buyerhome />} />
         <Route path="/post_view" element={<Fullpost />} />
         <Route path="/user/profile" element={<Userprofile />} />
         <Route path="/user/sell-post" element={<Sellpost />} />

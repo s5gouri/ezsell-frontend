@@ -13,6 +13,7 @@ export const Payment = () => {
   const [user, setuser] = useState(0);
   const [confirmation, setconfirmation] = useState(1);
   const [QRCODE, setqr] = useState(null);
+  const [send, setsend] = useState(false);
 
   useEffect(() => {
     const fetch_details = async () => {
@@ -45,6 +46,7 @@ export const Payment = () => {
 
   const send_qrcode = async (e) => {
     e.preventDefault();
+    setsend(true);
     console.log("hello");
     const formData = new FormData();
     formData.append("QRCODE", QRCODE);
@@ -70,6 +72,7 @@ export const Payment = () => {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
+    setsend(false);
   };
 
   const convertToBase64 = (file) => {
@@ -141,9 +144,10 @@ export const Payment = () => {
                           />
                           <button
                             type="submit"
+                            disabled={send}
                             className="btn mt-2 mb-2 btn-success"
                           >
-                            Add QRcode
+                            {send === true ? "Please wait..." : "Add QRcode"}
                           </button>
                         </form>
                       </div>

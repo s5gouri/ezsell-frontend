@@ -85,7 +85,7 @@ export const Signin = () => {
                   </Link>
                 </div>
                 <div
-                  className={`col-md-5 bg-primar ${mycss10.brdr} ${mycss10.b} centre ${mycss10.centre1} ms-1 `}
+                  className={`col-md-5 bg-primar ${mycss10.brdr} ${mycss10.b} centre ${mycss10.centre1} `}
                 >
                   <div className={`col-md-10  mt-2 mb-2 `}>
                     <form onSubmit={handlesubmit}>

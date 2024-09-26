@@ -1,5 +1,5 @@
 # It's a Deployed project 
-# Link for the website https://ezsell.vercel.app/signin 
+# Link for the website [ezSell](https://ezsell.vercel.app/signin)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
